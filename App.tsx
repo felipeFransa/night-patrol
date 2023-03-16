@@ -1,14 +1,9 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
-import { styles } from './style';
+import { Loading } from './src/screens/loading';
 
 const app = () => {
   return (
-    <View style={styles.container}>
-      <Text>App Teste</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Loading />
   );
 }
 
