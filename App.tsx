@@ -1,9 +1,13 @@
-import React from 'react';
+import { ThemeProvider } from 'styled-components/native';
 import { Loading } from './src/screens/loading';
+
+import  light from './src/theme/light';
 
 const app = () => {
   return (
-    <Loading />
+    <ThemeProvider theme={light}>
+      <Loading />
+    </ThemeProvider>
   );
 }
 
