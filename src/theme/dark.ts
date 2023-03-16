@@ -1,0 +1,12 @@
+export default {
+  COLORS: {
+    BACKGROUND: '#010300',  // PRETO 
+
+    PRIMARY_900: '#5A7F78',  // VERDE
+    PRIMARY_600: '#314C53', // VERDE ESCURO
+    
+
+    TEXT_SECONDARY: '#F7F8FC',  // BRANCO GELADA
+    TEXT_PRIMARY: '#BBDEC6',  // VERDE CLARO
+  }
+}
