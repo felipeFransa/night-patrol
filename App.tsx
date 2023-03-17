@@ -11,11 +11,8 @@ const app = () => {
   const [theme, setTheme] = useState(light)
 
   const hanldeTheme = () => {
-    if(theme === light) {
-      setTheme(dark)
-    }else if (theme === dark) {
-      setTheme(light)
-    }
+    const newTheme = theme === light ? dark : light;
+    setTheme(newTheme);
   }
 
   return (
