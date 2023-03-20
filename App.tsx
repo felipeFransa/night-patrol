@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ThemeProvider } from 'styled-components/native';
+import { SignUp } from './src/screens/SignUp'
 import { Loading } from './src/screens/loading';
 import { Home } from './src/screens/Home';
 import { Login } from  './src/screens/Login';
@@ -18,6 +19,8 @@ const app = () => {
 
   return (
     <ThemeProvider theme={theme}>
+
+      {/* <SignUp/> */}
       <Login/>
       {/* <Loading />
       <Button title='Tema' onPress={hanldeTheme} />

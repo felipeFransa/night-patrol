@@ -54,7 +54,7 @@ export const Button = styled.Button`
   height: 30px;
   border-radius: 10px;
 `
-export const ToRegister = styled.Text`
+export const ToLogin = styled.Text`
   font-size: 12px;
   color: ${({ theme }) => theme.COLORS.TEXT_PRIMARY};
 `
