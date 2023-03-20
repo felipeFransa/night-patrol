@@ -23,8 +23,8 @@ const app = () => {
 
       {/* <SignUp/> */}
       {/* <Login/>
-      <Loading />
-      <Button title='Tema' onPress={hanldeTheme} /> */}
+      <Loading /> */}
+      <Button title='Tema' onPress={hanldeTheme} />
       
     </ThemeProvider>
   );

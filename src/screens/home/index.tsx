@@ -1,28 +1,31 @@
-import React from "react";
+import React, { useState} from "react";
 import { SafeAreaView } from 'react-native';
 import * as C from './style';
 
 export const Home = () => {
+  const [userName, setUserName] = useState('Felipe');
+  const [userBairro, setUserBairro] = useState('Caicara')
+
   return (
     <SafeAreaView>
       <C.Container>
-        <C.UsersContainer>
+        <C.Header>
           <C.UsersInfonsBox>
             <C.UserBox>
               <C.UserName>
-                Felipe
+               {userName}
               </C.UserName>
             </C.UserBox>
             <C.UserBox>
               <C.UserBairro>
-                Caicara
+                {userBairro}
               </C.UserBairro>
             </C.UserBox>
           </C.UsersInfonsBox>
           <C.UsersPhotoBox>
-            <C.Text>Teste</C.Text>
+            <C.AreaPhoto></C.AreaPhoto>
           </C.UsersPhotoBox>
-        </C.UsersContainer>
+        </C.Header>
       </C.Container>
     </SafeAreaView>
   )
