@@ -19,9 +19,9 @@ const app = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      {/* <Home/> */}
+      <Home/>
 
-      <SignUp/>
+      {/* <SignUp/> */}
       {/* <Login/>
       <Loading />
       <Button title='Tema' onPress={hanldeTheme} /> */}
