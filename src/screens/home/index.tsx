@@ -1,11 +1,26 @@
 import React from "react";
-import {} from 'react-native';
-import { Container } from './style';
+import * as C from './style';
 
 export const Home = () => {
   return (
-    <Container>
-      
-    </Container>
+    <C.Container>
+      <C.UsersContainer>
+        <C.UsersInfonsBox>
+          <C.UserBox>
+            <C.UserName>
+              Felipe
+            </C.UserName>
+          </C.UserBox>
+          <C.UserBox>
+            <C.UserBairro>
+              Caicara
+            </C.UserBairro>
+          </C.UserBox>
+        </C.UsersInfonsBox>
+        <C.UsersPhotoBox>
+         teste
+        </C.UsersPhotoBox>
+      </C.UsersContainer>
+    </C.Container>
   )
 }
