@@ -10,22 +10,30 @@ export const Home = () => {
     <SafeAreaView>
       <C.Container>
         <C.Header>
+
           <C.UsersInfonsBox>
+
             <C.UserBox>
-              <C.UserName>
-               {userName}
-              </C.UserName>
+              <C.NameText>
+                {userName}
+              </C.NameText>
             </C.UserBox>
+
             <C.UserBox>
-              <C.UserBairro>
+              <C.BairroText>
                 {userBairro}
-              </C.UserBairro>
+              </C.BairroText>
             </C.UserBox>
+
           </C.UsersInfonsBox>
+
           <C.UsersPhotoBox>
             <C.AreaPhoto></C.AreaPhoto>
           </C.UsersPhotoBox>
         </C.Header>
+
+
+
       </C.Container>
     </SafeAreaView>
   )

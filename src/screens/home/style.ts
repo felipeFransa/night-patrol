@@ -20,23 +20,30 @@ export const UsersInfonsBox = styled.View`
   width: 50%;
   height: 100%;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
+  justify-content: center;
 `
 
 export const UserBox = styled.View`
-  margin-left: 20px;
+  color: ${({theme})=> theme.COLORS.TEXT_PRIMARY};
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 10px;
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 20px;
 `
-export const UserName = styled.Text`
+export const NameText = styled.Text`
   font-size: 30px;
-  color: ${({ theme }) => theme.COLORS.TEXT_PRIMARY};
+  color: ${({theme})=> theme.COLORS.TEXT_PRIMARY};
 `
-export const UserBairro = styled.Text`
+
+export const BairroText = styled.Text`
   font-size: 20px;
   color: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
 `
+
+
 export const UsersPhotoBox = styled.View`
   display: flex;
   width: 50%;
