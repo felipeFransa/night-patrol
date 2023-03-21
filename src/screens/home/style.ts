@@ -33,8 +33,6 @@ export const TextUserAndress = styled.Text`
   font-size: 20px;
   color: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
 `
-
-
 export const UsersPhotoBox = styled.View`
   display: flex;
   width: 50%;
@@ -49,4 +47,28 @@ export const AreaPhoto = styled.View`
   border-radius: 10px;
   background: ${({theme})=>theme.COLORS.TEXT_PRIMARY};
   border: 1px solid ${({theme})=>theme.COLORS.TEXT_SECONDARY};
+`
+export const BoxButton = styled.View`
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`
+
+export const Button = styled.View`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px; 
+  height: 50px;
+  background: ${({ theme}) => theme.COLORS.TEXT_SECONDARY};
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+`
+export const TextButton = styled.Text`
+  font-size: 20px;
+  color: ${({ theme }) => theme.COLORS.BACKGROUND};
 `
