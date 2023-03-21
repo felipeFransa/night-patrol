@@ -88,7 +88,6 @@ export const NotificationTitle = styled.View`
   display: flex;
   flex-direction: row;
   justify-content: space;
-  
 `
 
 export const TitleNotification = styled.Text`
@@ -96,6 +95,33 @@ export const TitleNotification = styled.Text`
   color: ${({theme})=> theme.COLORS.TEXT_PRIMARY};
 `
 export const TextSecudary = styled.Text`
+  font-size: 12px;
+  color: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
+`
+
+export const NotificationBody = styled.View`
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space;
+`
+
+export const LogoBodyNTF = styled.View`
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
+`
+export const BodyNFT = styled.View`
+  display: flex;
+  flex-direction: column;
+`
+export const ContentBodyNFT = styled.Text`
+  font-size: 16px;
+  color: ${({ theme }) => theme.COLORS.TEXT_PRIMARY};
+`
+export const ContentBodyNFTDate = styled.Text`
   font-size: 12px;
   color: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
 `

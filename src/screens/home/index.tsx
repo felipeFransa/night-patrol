@@ -6,9 +6,17 @@ export const Home = () => {
   const [userName, setUserName] = useState('Felipe');
   const [userBairro, setUserBairro] = useState('Caicara');
   const [sendPatrol, setSendPatrol] = useState(0)
+  const [dateSendPatrol, setDateSendPatrol] = useState(0)
+
+  
 
   const handleButtonSend = () => {
     setSendPatrol(sendPatrol + 1);
+  }
+  const handleDate = () => {
+    let DateAtual = new Date();
+    let newDate = DateAtual.getHours
+    setDateSendPatrol(newDate);
   }
 
   return (
@@ -45,6 +53,14 @@ export const Home = () => {
           <C.TitleNotification>Ultimas chamadas</C.TitleNotification>
           <C.TextSecudary>Ver tudo!</C.TextSecudary>
         </C.TitleNotification>
+
+        <C.NotificationBody>
+          <C.LogoBodyNTF></C.LogoBodyNTF>
+          <C.BodyNFT>
+            <C.ContentBodyNFT>{`Ronda iniciada! ${sendPatrol}`}</C.ContentBodyNFT>
+            <C.ContentBodyNFTDate>{`Hora de inicio da ronda ${dateSendPatrol}`}</C.ContentBodyNFTDate>
+          </C.BodyNFT>
+        </C.NotificationBody>
       </C.BoxNotification>
 
       </C.Container>
