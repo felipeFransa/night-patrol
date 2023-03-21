@@ -24,21 +24,12 @@ export const UsersInfonsBox = styled.View`
   justify-content: center;
 `
 
-export const UserBox = styled.View`
-  color: ${({theme})=> theme.COLORS.TEXT_PRIMARY};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  width: 100%;
-  height: 20px;
-`
-export const NameText = styled.Text`
+export const TextUserName = styled.Text`
   font-size: 30px;
   color: ${({theme})=> theme.COLORS.TEXT_PRIMARY};
 `
 
-export const BairroText = styled.Text`
+export const TextUserAndress = styled.Text`
   font-size: 20px;
   color: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
 `

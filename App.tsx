@@ -20,12 +20,8 @@ const app = () => {
   return (
     <ThemeProvider theme={theme}>
       <Home/>
-
-      {/* <SignUp/> */}
-      {/* <Login/>
-      <Loading /> */}
-      {/* <Button title='Tema' onPress={hanldeTheme} />
-       */}
+      <Button title='Tema' onPress={hanldeTheme} />
+      
     </ThemeProvider>
   );
 }
