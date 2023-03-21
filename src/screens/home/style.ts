@@ -57,7 +57,7 @@ export const BoxButton = styled.View`
   flex-direction: column;
 `
 
-export const Button = styled.View`
+export const Button = styled.TouchableOpacity`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,4 +71,31 @@ export const Button = styled.View`
 export const TextButton = styled.Text`
   font-size: 20px;
   color: ${({ theme }) => theme.COLORS.BACKGROUND};
+`
+
+export const BoxNotification = styled.View`
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`
+
+export const NotificationTitle = styled.View`
+  width: 100%;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space;
+  
+`
+
+export const TitleNotification = styled.Text`
+  font-size: 16px;
+  color: ${({theme})=> theme.COLORS.TEXT_PRIMARY};
+`
+export const TextSecudary = styled.Text`
+  font-size: 12px;
+  color: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
 `
