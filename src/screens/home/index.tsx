@@ -20,7 +20,6 @@ export const Home = () => {
   }
 
   return (
-    <SafeAreaView>
       <C.Container>
         <C.Header>
           <C.UsersInfonsBox>
@@ -35,7 +34,6 @@ export const Home = () => {
        <C.BoxButton>
         <C.Button onPress={handleButtonSend}>
           <C.TextButton>Inicia!</C.TextButton>
-          <C.TextButton>{`Rondas feitas ${sendPatrol}`}</C.TextButton>
         </C.Button>
         <C.Button>
           <C.TextButton>Fecha!</C.TextButton>
@@ -49,10 +47,11 @@ export const Home = () => {
        </C.BoxButton>
        
       <C.BoxNotification>
-        <C.TitleNotification>
+
+        <C.NotificationTitle>
           <C.TitleNotification>Ultimas chamadas</C.TitleNotification>
           <C.TextSecudary>Ver tudo!</C.TextSecudary>
-        </C.TitleNotification>
+        </C.NotificationTitle>
 
         <C.NotificationBody>
           <C.LogoBodyNTF></C.LogoBodyNTF>
@@ -60,10 +59,27 @@ export const Home = () => {
             <C.ContentBodyNFT>{`Ronda iniciada! ${sendPatrol}`}</C.ContentBodyNFT>
             <C.ContentBodyNFTDate>{`Hora de inicio da ronda ${dateSendPatrol}`}</C.ContentBodyNFTDate>
           </C.BodyNFT>
+           <C.HoursBody></C.HoursBody>
         </C.NotificationBody>
+
+        <C.NotificationBody>
+          <C.LogoBodyNTF></C.LogoBodyNTF>
+          <C.BodyNFT>
+            <C.ContentBodyNFT>{`Ronda iniciada! ${sendPatrol}`}</C.ContentBodyNFT>
+            <C.ContentBodyNFTDate>{`Hora de inicio da ronda ${dateSendPatrol}`}</C.ContentBodyNFTDate>
+          </C.BodyNFT>
+           <C.HoursBody></C.HoursBody>
+        </C.NotificationBody>
+
       </C.BoxNotification>
 
+      <C.MenuPrimary>
+        <C.Icons></C.Icons>
+        <C.Icons></C.Icons>
+        <C.Icons></C.Icons>
+        <C.Icons></C.Icons>
+      </C.MenuPrimary>
+
       </C.Container>
-    </SafeAreaView>
   )
 }

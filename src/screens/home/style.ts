@@ -1,9 +1,10 @@
 import styled from "styled-components/native";
 
-export const Container = styled.View`
+export const Container = styled.SafeAreaView`
+flex: 1;
   background: ${( { theme } ) => theme.COLORS.BACKGROUND};
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: column;
 `
 
@@ -50,21 +51,23 @@ export const AreaPhoto = styled.View`
 `
 export const BoxButton = styled.View`
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   height: auto;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
 `
 
 export const Button = styled.TouchableOpacity`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px; 
+  width: 150px; 
   height: 50px;
   background: ${({ theme}) => theme.COLORS.TEXT_SECONDARY};
   margin-top: 10px;
+  margin-left: 10px;
   margin-bottom: 10px;
   border-radius: 10px;
 `
@@ -87,7 +90,7 @@ export const NotificationTitle = styled.View`
   height: 30px;
   display: flex;
   flex-direction: row;
-  justify-content: space;
+  justify-content: space-around;
 `
 
 export const TitleNotification = styled.Text`
@@ -104,7 +107,7 @@ export const NotificationBody = styled.View`
   height: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space;
+  justify-content: space-around;
 `
 
 export const LogoBodyNTF = styled.View`
@@ -124,4 +127,27 @@ export const ContentBodyNFT = styled.Text`
 export const ContentBodyNFTDate = styled.Text`
   font-size: 12px;
   color: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
+`
+export const HoursBody = styled.View`
+  width: 30px;
+  height: 30px;
+  background: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
+  color: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
+`
+
+export const MenuPrimary = styled.View`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 330px;
+  height: 60px;
+  border-radius: 20px;;
+  background: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
+`
+export const Icons = styled.TouchableOpacity`
+  width: 40px;
+  height: 40px;
+  background: ${({ theme }) => theme.COLORS.BACKGROUND};
+  border-radius: 10px;
 `
