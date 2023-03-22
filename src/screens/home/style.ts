@@ -141,7 +141,7 @@ export const MenuPrimary = styled.View`
   justify-content: space-around;
   align-items: center;
   width: 330px;
-  height: 60px;
+  height: 80px;
   border-radius: 20px;;
   background: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
 `

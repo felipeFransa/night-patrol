@@ -1,12 +1,13 @@
 import React, { useState} from "react";
-import { SafeAreaView } from 'react-native';
 import * as C from './style';
 
 export const Home = () => {
   const [userName, setUserName] = useState('Felipe');
   const [userBairro, setUserBairro] = useState('Caicara');
-  const [sendPatrol, setSendPatrol] = useState(0)
-  const [dateSendPatrol, setDateSendPatrol] = useState(0)
+  const [sendPatrol, setSendPatrol] = useState(0);
+  const [madePatrol, setMadePatrol] = useState(0);
+
+  const [dateSendPatrol, setDateSendPatrol] = useState('00:00')
 
   
 
@@ -15,8 +16,13 @@ export const Home = () => {
   }
   const handleDate = () => {
     let DateAtual = new Date();
-    let newDate = DateAtual.getHours
+    let newDate = `${DateAtual.getHours}`
     setDateSendPatrol(newDate);
+  }
+
+  const handleButtonSub = () => {
+    setMadePatrol(madePatrol + 1);
+    
   }
 
   return (
@@ -36,7 +42,7 @@ export const Home = () => {
           <C.TextButton>Inicia!</C.TextButton>
         </C.Button>
         <C.Button>
-          <C.TextButton>Fecha!</C.TextButton>
+          <C.TextButton onPress={handleButtonSub}>Fecha!</C.TextButton>
         </C.Button>
         <C.Button>
           <C.TextButton>Cobertura!</C.TextButton>
@@ -65,7 +71,7 @@ export const Home = () => {
         <C.NotificationBody>
           <C.LogoBodyNTF></C.LogoBodyNTF>
           <C.BodyNFT>
-            <C.ContentBodyNFT>{`Ronda iniciada! ${sendPatrol}`}</C.ContentBodyNFT>
+            <C.ContentBodyNFT>{`Ronda concluida! ${madePatrol}`}</C.ContentBodyNFT>
             <C.ContentBodyNFTDate>{`Hora de inicio da ronda ${dateSendPatrol}`}</C.ContentBodyNFTDate>
           </C.BodyNFT>
            <C.HoursBody></C.HoursBody>
