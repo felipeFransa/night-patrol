@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ThemeProvider } from 'styled-components/native';
+import { Toppings } from './src/screens/Toppings';
 import { SignUp } from './src/screens/SignUp'
 import { Loading } from './src/screens/loading';
 import { Home } from './src/screens/Home';
@@ -20,7 +21,7 @@ const app = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Activities/>
+      <Toppings/>
       <Button title='Tema' onPress={hanldeTheme} />
       
     </ThemeProvider>
