@@ -4,6 +4,7 @@ import { SignUp } from './src/screens/SignUp'
 import { Loading } from './src/screens/loading';
 import { Home } from './src/screens/Home';
 import { Login } from  './src/screens/Login';
+import { Activities } from './src/screens/Activities';
 import { Button } from './style'
 
 import  light from './src/theme/light';
@@ -19,7 +20,7 @@ const app = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Home/>
+      <Activities/>
       <Button title='Tema' onPress={hanldeTheme} />
       
     </ThemeProvider>
