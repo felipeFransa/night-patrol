@@ -21,7 +21,7 @@ const app = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Toppings/>
+      <Login/>
       <Button title='Tema' onPress={hanldeTheme} />
       
     </ThemeProvider>
