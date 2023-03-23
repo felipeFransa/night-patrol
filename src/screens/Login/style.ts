@@ -49,12 +49,29 @@ export const Input = styled.TextInput`
   border-radius: 20px;
   margin-top: 5px;
 `
-export const Button = styled.Button`
-  width: 50px;
-  height: 30px;
+export const Button = styled.TouchableOpacity`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 60px;
   border-radius: 10px;
+  background: ${({theme})=> theme.COLORS.TEXT_SECONDARY};
+`
+export const TextButton = styled.Text`
+  font-size: 30px;
+  color: ${({theme})=> theme.COLORS.BACKGROUND};
 `
 export const ToRegister = styled.Text`
   font-size: 12px;
   color: ${({ theme }) => theme.COLORS.TEXT_PRIMARY};
+`
+export const BoxPermissions = styled.View`
+  width: 150px;
+  height: 50px;
+  background: ${({ theme })=> theme.COLORS.PRIMARY_600};
+`
+export const Permission = styled.Text`
+  font-size: 16px;
+  color: ${({ theme })=> theme.COLORS.TEXT_PRIMARY};
 `

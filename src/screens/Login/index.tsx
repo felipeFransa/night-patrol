@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import * as C from './style';
 
 
 export const Login = () => {
+
+  const [loading, setLoading] = useState(false);
+  const [permission, setPermission] = useState('');
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
+  
+
   return (
       <C.Container>
         <C.ContainerLogo>
@@ -19,8 +27,15 @@ export const Login = () => {
             <C.TextArea>Senha:</C.TextArea>
             <C.Input placeholder='Digite sua senha' />
           </C.InputArea>
-          <C.Button title="Login"/>
+          <C.Button>
+            <C.TextButton>Login</C.TextButton>
+          </C.Button>
         </C.ContainerForm>
+        {loading &&
+          <C.BoxPermissions>
+            <C.Permission>{permission}</C.Permission>
+          </C.BoxPermissions>
+        }
         <C.ToRegister>
           Faca seu cadastro!
         </C.ToRegister>

@@ -12,6 +12,9 @@ export const api = {
     return response.data;
   },
   addNewUsers: async (name: string, email: string, password: string) => {
-    let response = await http.post('/users')
+    let response = await http.post('/users',{
+      name, email, password
+    });
+    return response.data;
   }
 }
