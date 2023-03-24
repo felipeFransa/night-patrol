@@ -6,7 +6,7 @@ import { Loading } from './src/screens/loading';
 import { Home } from './src/screens/Home';
 import { Login } from  './src/screens/Login';
 import { Activities } from './src/screens/Activities';
-import { Button } from './style'
+import { Button } from './styleGlobal'
 
 import  light from './src/theme/light';
 import dark from './src/theme/dark';

@@ -9,9 +9,15 @@ export const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleToCheckLogin = () => {
-    setStatus(!status);
-    setPermission('Acesso Liberado!')
+  const handleVerify = async () => {
+    try {
+      setStatus(!status);
+      setPermission('Acesso Liberado!');
+      setStatus(true);
+    }catch(e) {
+      setStatus(true);
+      setPermission('Acesso Negado!')
+    }
   }
   
 
@@ -31,7 +37,7 @@ export const Login = () => {
             <C.TextArea>Senha:</C.TextArea>
             <C.Input placeholder='Digite sua senha' value={password} secureTextEntry={true} onChangeText={t=>setPassword(t)} />
           </C.InputArea>
-          <C.Button onPress={handleToCheckLogin}>
+          <C.Button onPress={handleVerify}>
             <C.TextButton>Login</C.TextButton>
           </C.Button>
         </C.ContainerForm>
