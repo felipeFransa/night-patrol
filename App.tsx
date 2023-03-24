@@ -1,3 +1,4 @@
+import { NavigationContainer } from '@react-navigation/native';
 import { useState } from 'react';
 import { ThemeProvider } from 'styled-components/native';
 import { Toppings } from './src/screens/Toppings';
@@ -20,11 +21,13 @@ const app = () => {
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <Login/>
-      <Button title='Tema' onPress={hanldeTheme} />
-      
-    </ThemeProvider>
+    <NavigationContainer>
+      <ThemeProvider theme={theme}>
+        <Login/>
+        <Button title='Tema' onPress={hanldeTheme} />
+      </ThemeProvider>
+    </NavigationContainer>
+    
   );
 }
 
