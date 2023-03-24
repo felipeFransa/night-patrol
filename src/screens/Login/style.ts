@@ -67,9 +67,14 @@ export const ToRegister = styled.Text`
   color: ${({ theme }) => theme.COLORS.TEXT_PRIMARY};
 `
 export const BoxPermissions = styled.View`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 150px;
   height: 50px;
-  background: ${({ theme })=> theme.COLORS.PRIMARY_600};
+  border:  1px solid ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
+  border-radius: 10px;
+  background: ${({ theme })=> theme.COLORS.BACKGROUND};
 `
 export const Permission = styled.Text`
   font-size: 16px;

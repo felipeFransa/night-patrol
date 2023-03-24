@@ -4,11 +4,15 @@ import * as C from './style';
 
 export const Login = () => {
 
-  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(false);
   const [permission, setPermission] = useState('');
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
+  const handleToCheckLogin = () => {
+    setStatus(!status);
+    setPermission('Acesso Liberado!')
+  }
   
 
   return (
@@ -21,17 +25,17 @@ export const Login = () => {
         <C.ContainerForm>
           <C.InputArea>
             <C.TextArea>Email:</C.TextArea>
-            <C.Input placeholder='Digite seu email' />
+            <C.Input placeholder='Digite seu email' value={email} onChangeText={t=>setEmail(t)} />
           </C.InputArea>
           <C.InputArea>
             <C.TextArea>Senha:</C.TextArea>
-            <C.Input placeholder='Digite sua senha' />
+            <C.Input placeholder='Digite sua senha' value={password} secureTextEntry={true} onChangeText={t=>setPassword(t)} />
           </C.InputArea>
-          <C.Button>
+          <C.Button onPress={handleToCheckLogin}>
             <C.TextButton>Login</C.TextButton>
           </C.Button>
         </C.ContainerForm>
-        {loading &&
+        {status  &&
           <C.BoxPermissions>
             <C.Permission>{permission}</C.Permission>
           </C.BoxPermissions>
