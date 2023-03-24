@@ -2,16 +2,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import 'react-native-gesture-handler';
 import { useState } from 'react';
 import { ThemeProvider } from 'styled-components/native';
-import { Toppings } from './src/screens/Toppings';
-import { SignUp } from './src/screens/SignUp'
-import { Loading } from './src/screens/loading';
-import { Home } from './src/screens/Home';
-import { Login } from  './src/screens/Login';
-import { Activities } from './src/screens/Activities';
 import { Button } from './styleGlobal'
+
+import MainStack from './src/routes/stack.routes';
 
 import  light from './src/theme/light';
 import dark from './src/theme/dark';
+
 
 const app = () => {
   const [theme, setTheme] = useState(light)
@@ -24,7 +21,7 @@ const app = () => {
   return (
     <NavigationContainer>
       <ThemeProvider theme={theme}>
-        <Login/>
+        <MainStack />
         <Button title='Tema' onPress={hanldeTheme} />
       </ThemeProvider>
     </NavigationContainer>
