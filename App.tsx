@@ -1,4 +1,5 @@
 import { NavigationContainer } from '@react-navigation/native';
+import 'react-native-gesture-handler';
 import { useState } from 'react';
 import { ThemeProvider } from 'styled-components/native';
 import { Toppings } from './src/screens/Toppings';
@@ -27,7 +28,6 @@ const app = () => {
         <Button title='Tema' onPress={hanldeTheme} />
       </ThemeProvider>
     </NavigationContainer>
-    
   );
 }
 
