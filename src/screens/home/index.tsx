@@ -1,4 +1,5 @@
 import React, { useState} from "react";
+import { useNavigation } from '@react-navigation/native'
 import * as C from './style';
 
 export const Home = () => {
@@ -6,6 +7,19 @@ export const Home = () => {
   const [userBairro, setUserBairro] = useState('Caicara');
   const [sendPatrol, setSendPatrol] = useState(0);
   const [madePatrol, setMadePatrol] = useState(0);
+
+  const handleGoHome = () => {
+    const navigation = useNavigation()
+    navigation.navigate('Home')
+  }
+  const handleGoTopping = () => {
+    const navigation = useNavigation()
+    navigation.navigate("Toppings")
+  }
+  const handleGoActivities = () => {
+    const navigation = useNavigation()
+    navigation.navigate("Activities")
+  }
 
   const [dateSendPatrol, setDateSendPatrol] = useState('00:00')
 
@@ -80,9 +94,9 @@ export const Home = () => {
       </C.BoxNotification>
 
       <C.MenuPrimary>
-        <C.Icons></C.Icons>
-        <C.Icons></C.Icons>
-        <C.Icons></C.Icons>
+        <C.Icons onPress={handleGoHome}></C.Icons>
+        <C.Icons onPress={handleGoTopping}></C.Icons>
+        <C.Icons onPress={handleGoActivities}></C.Icons>
         <C.Icons></C.Icons>
       </C.MenuPrimary>
 
