@@ -12,7 +12,7 @@ const MainStack = createNativeStackNavigator();
 export default () => {
   return (
     <MainStack.Navigator>
-      <MainStack.Screen name='Home' component={Home}/>
+      <MainStack.Screen name='Home' component={Home} options={{ title: 'Inicio'}}/>
       <MainStack.Screen name='Toppings' component={Toppings}/>
       <MainStack.Screen name='Loading' component={Loading}/>
       <MainStack.Screen name='SignUp' component={SignUp}/>
