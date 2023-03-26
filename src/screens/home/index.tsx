@@ -7,17 +7,16 @@ export const Home = () => {
   const [userBairro, setUserBairro] = useState('Caicara');
   const [sendPatrol, setSendPatrol] = useState(0);
   const [madePatrol, setMadePatrol] = useState(0);
+  
+  const navigation = useNavigation();
 
   const handleGoHome = () => {
-    const navigation = useNavigation()
     navigation.navigate('Home')
   }
   const handleGoTopping = () => {
-    const navigation = useNavigation()
     navigation.navigate("Toppings")
   }
   const handleGoActivities = () => {
-    const navigation = useNavigation()
     navigation.navigate("Activities")
   }
 
