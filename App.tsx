@@ -2,7 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import 'react-native-gesture-handler';
 import { useState } from 'react';
 import { ThemeProvider } from 'styled-components/native';
-import { Button , ThemeBTN, TextBTN } from './styleGlobal'
+import { ThemeBTN, TextBTN } from './styleGlobal'
 
 import MainStack from './src/routes/stack.routes';
 
