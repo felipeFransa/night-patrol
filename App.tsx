@@ -2,7 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import 'react-native-gesture-handler';
 import { useState } from 'react';
 import { ThemeProvider } from 'styled-components/native';
-import { Button } from './styleGlobal'
+import { Button , ThemeBTN, TextBTN } from './styleGlobal'
 
 import MainStack from './src/routes/stack.routes';
 
@@ -22,7 +22,9 @@ const app = () => {
     <NavigationContainer>
       <ThemeProvider theme={theme}>
         <MainStack />
-        <Button title='Tema' onPress={hanldeTheme} />
+        <ThemeBTN onPress={hanldeTheme}>
+          <TextBTN>Tema</TextBTN>
+        </ThemeBTN>
       </ThemeProvider>
     </NavigationContainer>
   );
