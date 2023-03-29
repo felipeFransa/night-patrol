@@ -11,10 +11,10 @@ import dark from './src/theme/dark';
 
 
 const app = () => {
-  const [theme, setTheme] = useState(light)
+  const [theme, setTheme] = useState(dark)
 
   const hanldeTheme = () => {
-    const newTheme = theme === light ? dark : light;
+    const newTheme = theme === dark ? light : dark;
     setTheme(newTheme);
   }
 
