@@ -9,7 +9,6 @@ import MainStack from './src/routes/stack.routes';
 import  light from './src/theme/light';
 import dark from './src/theme/dark';
 
-
 const app = () => {
   const [theme, setTheme] = useState(dark)
 
