@@ -24,12 +24,6 @@ export const Toppings = () => {
         <C.Toppings></C.Toppings>
       </C.ToppingsBox>
 
-      <C.MenuPrimary>
-        <C.Icons onPress={handleGoHome}></C.Icons>
-        <C.Icons onPress={handleGoTopping}></C.Icons>
-        <C.Icons onPress={handleGoActivities}></C.Icons>
-        <C.Icons></C.Icons>
-      </C.MenuPrimary>
     </C.Container>
   )
 }

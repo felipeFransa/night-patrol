@@ -36,20 +36,3 @@ export const Toppings = styled.View`
   background: ${({theme})=>theme.COLORS.TEXT_SECONDARY};
   border-radius: 20px;
 `
-
-export const MenuPrimary = styled.View`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  width: 320px;
-  height: 80px;
-  border-radius: 20px;;
-  background: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
-`
-export const Icons = styled.TouchableOpacity`
-  width: 40px;
-  height: 40px;
-  background: ${({ theme }) => theme.COLORS.BACKGROUND};
-  border-radius: 10px;
-`

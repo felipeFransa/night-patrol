@@ -134,20 +134,3 @@ export const HoursBody = styled.View`
   background: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
   color: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
 `
-
-export const MenuPrimary = styled.View`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  width: 330px;
-  height: 80px;
-  border-radius: 20px;;
-  background: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
-`
-export const Icons = styled.TouchableOpacity`
-  width: 40px;
-  height: 40px;
-  background: ${({ theme }) => theme.COLORS.BACKGROUND};
-  border-radius: 10px;
-`
