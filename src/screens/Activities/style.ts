@@ -7,18 +7,6 @@ export const Container = styled.SafeAreaView`
   justify-content: space-around;
   flex-direction: column;
 `
-export const BoxText = styled.View`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  width: 320px;
-  height: 60px;
-`
-export const Text = styled.Text`
-  font-size: 20px;
-  color: ${({theme})=>theme.COLORS.TEXT_PRIMARY};
-`
 
 export const NotificationBox = styled.View`
   width: 320px;
