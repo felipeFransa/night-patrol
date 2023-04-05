@@ -23,7 +23,7 @@ export default () => {
           imgSource = require('../assets/casa.png');
         break;
         case 'Notificacoes':
-          imgSource = require('../assets/definicoes.png');
+          imgSource = require('../assets/notificacoes.png');
         break;
         case 'Atividades':
           imgSource = require('../assets/config.png');

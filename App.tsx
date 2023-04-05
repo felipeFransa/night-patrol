@@ -11,20 +11,16 @@ import  light from './src/theme/light';
 import dark from './src/theme/dark';
 
 const app = () => {
-  const [theme, setTheme] = useState(dark)
+  const [theme, setTheme] = useState(light)
 
   const hanldeTheme = () => {
-    const newTheme = theme === dark ? light : dark;
+    const newTheme = theme === light ? dark : light;
     setTheme(newTheme);
   }
 
   return (
     <NavigationContainer>
       <ThemeProvider theme={theme}>
-        {/* <MainStack /> */}
-        <ThemeBTN onPress={hanldeTheme}>
-          <TextBTN>Tema</TextBTN>
-        </ThemeBTN>
         <Tab />
       </ThemeProvider>
     </NavigationContainer>
