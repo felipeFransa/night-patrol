@@ -42,3 +42,17 @@ export const infobody = styled.Text`
   font-size: 16px;
   color: ${({theme})=> theme.COLORS.TEXT_PRIMARY};
 `
+
+export const BTNSalve = styled.TouchableOpacity`
+  width: 200px;
+  height: 50px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center
+  align-items: center;
+  background: ${( { theme } ) => theme.COLORS.TEXT_PRIMARY};
+`
+export const BTNText = styled.Text`
+  font-size: 16px;
+  color: ${({theme})=> theme.COLORS.BACKGROUND};
+`

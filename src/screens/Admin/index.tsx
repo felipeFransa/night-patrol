@@ -32,6 +32,9 @@ export const Users = () => {
           <C.infobody>{groups}</C.infobody>
         </C.UserInfo>
       </C.UserBoxInfo>
+      <C.BTNSalve>
+        <C.BTNText>Salvar alteracoes!</C.BTNText>
+      </C.BTNSalve>
     </C.Container>
   )
 }
