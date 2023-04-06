@@ -5,7 +5,7 @@ export default {
     PRIMARY_900: '#010300',  // PRETO
     PRIMARY_600: '#BBDEC6',  // VERDE CLARO
 
-    TEXT_SECONDARY: '#314C53', // VERDE ESCURO
-    TEXT_PRIMARY: '#5A7F78',  // VERDE
+    TEXT_SECONDARY: '#000000', // Preto Total
+    TEXT_PRIMARY: '#010300',  // PRETO
   }
 }

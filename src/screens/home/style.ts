@@ -42,12 +42,9 @@ export const UsersPhotoBox = styled.View`
   align-items: center;
   flex-direction: column;
 `
-export const AreaPhoto = styled.View`
+export const AreaPhoto = styled.Image`
   width: 80px;
   height: 80px; 
-  border-radius: 10px;
-  background: ${({theme})=>theme.COLORS.TEXT_PRIMARY};
-  border: 1px solid ${({theme})=>theme.COLORS.TEXT_SECONDARY};
 `
 export const BoxButton = styled.View`
   display: flex;
@@ -84,6 +81,8 @@ export const BoxNotification = styled.View`
   align-items: center;
   flex-direction: column;
 `
+export const BoxNotificationArea = styled.ScrollView`
+`
 
 export const NotificationTitle = styled.View`
   width: 100%;
@@ -111,10 +110,19 @@ export const NotificationBody = styled.View`
 `
 
 export const LogoBodyNTF = styled.View`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 50px;
   height: 50px;
-  border-radius: 50px;
-  background: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
+`
+export const PatrolStart = styled.Image`
+  width: 32px;
+  height: 32px;
+`
+export const PatrolStop = styled.Image`
+  width: 32px;
+  height: 32px;
 `
 export const BodyNFT = styled.View`
   display: flex;

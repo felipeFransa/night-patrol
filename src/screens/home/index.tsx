@@ -1,5 +1,5 @@
 import React, { useState} from "react";
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native';
 import * as C from './style';
 
 export const Home = () => {
@@ -46,7 +46,7 @@ export const Home = () => {
             <C.TextUserAndress>{userBairro}</C.TextUserAndress>
           </C.UsersInfonsBox>
           <C.UsersPhotoBox>
-            <C.AreaPhoto></C.AreaPhoto>
+            <C.AreaPhoto source={require('../../assets/retrato.png')}/>
           </C.UsersPhotoBox>
         </C.Header>
 
@@ -66,30 +66,59 @@ export const Home = () => {
        </C.BoxButton>
        
       <C.BoxNotification>
-
         <C.NotificationTitle>
           <C.TitleNotification>Ultimas chamadas</C.TitleNotification>
           <C.TextSecudary>Ver tudo!</C.TextSecudary>
         </C.NotificationTitle>
 
-        <C.NotificationBody>
-          <C.LogoBodyNTF></C.LogoBodyNTF>
-          <C.BodyNFT>
-            <C.ContentBodyNFT>{`Ronda iniciada! ${sendPatrol}`}</C.ContentBodyNFT>
-            <C.ContentBodyNFTDate>{`Hora de inicio da ronda ${dateSendPatrol}`}</C.ContentBodyNFTDate>
-          </C.BodyNFT>
-           <C.HoursBody></C.HoursBody>
-        </C.NotificationBody>
+        <C.BoxNotificationArea>
 
-        <C.NotificationBody>
-          <C.LogoBodyNTF></C.LogoBodyNTF>
-          <C.BodyNFT>
-            <C.ContentBodyNFT>{`Ronda concluida! ${madePatrol}`}</C.ContentBodyNFT>
-            <C.ContentBodyNFTDate>{`Hora de inicio da ronda ${dateSendPatrol}`}</C.ContentBodyNFTDate>
-          </C.BodyNFT>
-           <C.HoursBody></C.HoursBody>
-        </C.NotificationBody>
+          <C.NotificationBody>
+            <C.LogoBodyNTF>
+              <C.PatrolStart source={require('../../assets/ciclismo.png')}/>
+            </C.LogoBodyNTF>
+            <C.BodyNFT>
+              <C.ContentBodyNFT>{`Ronda iniciada! ${sendPatrol}`}</C.ContentBodyNFT>
+              <C.ContentBodyNFTDate>{`Hora de inicio da ronda ${dateSendPatrol}`}</C.ContentBodyNFTDate>
+            </C.BodyNFT>
+            <C.HoursBody></C.HoursBody>
+          </C.NotificationBody>
+          
+          <C.NotificationBody>
+            <C.LogoBodyNTF>
+              <C.PatrolStop source={require('../../assets/patrolStop.png')}/>
+            </C.LogoBodyNTF>
+            <C.BodyNFT>
+              <C.ContentBodyNFT>{`Ronda concluida! ${madePatrol}`}</C.ContentBodyNFT>
+              <C.ContentBodyNFTDate>{`Hora de inicio da ronda ${dateSendPatrol}`}</C.ContentBodyNFTDate>
+            </C.BodyNFT>
+            <C.HoursBody></C.HoursBody>
+          </C.NotificationBody>
 
+          <C.NotificationBody>
+            <C.LogoBodyNTF>
+              <C.PatrolStart source={require('../../assets/ciclismo.png')}/>
+            </C.LogoBodyNTF>
+            <C.BodyNFT>
+              <C.ContentBodyNFT>{`Ronda iniciada! ${sendPatrol}`}</C.ContentBodyNFT>
+              <C.ContentBodyNFTDate>{`Hora de inicio da ronda ${dateSendPatrol}`}</C.ContentBodyNFTDate>
+            </C.BodyNFT>
+            <C.HoursBody></C.HoursBody>
+          </C.NotificationBody>
+
+          <C.NotificationBody>
+            <C.LogoBodyNTF>
+              <C.PatrolStop source={require('../../assets/patrolStop.png')}/>
+            </C.LogoBodyNTF>
+            <C.BodyNFT>
+              <C.ContentBodyNFT>{`Ronda concluida! ${madePatrol}`}</C.ContentBodyNFT>
+              <C.ContentBodyNFTDate>{`Hora de inicio da ronda ${dateSendPatrol}`}</C.ContentBodyNFTDate>
+            </C.BodyNFT>
+            <C.HoursBody></C.HoursBody>
+          </C.NotificationBody>
+       
+        </C.BoxNotificationArea>
+        
       </C.BoxNotification>
 
       </C.Container>
