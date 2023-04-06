@@ -10,7 +10,7 @@ export const Container = styled.SafeAreaView`
 export const BoxNotification = styled.View`
   display: flex;
   width: 100%;
-  height: auto;
+  height: 100%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -36,11 +36,14 @@ export const TextSecudary = styled.Text`
 `
 
 export const NotificationBody = styled.View`
-  width: 100%;
+  width: 300px;
   height: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  border: 1px solid ${({ theme }) => theme.COLORS.TEXT_PRIMARY};
+  border-radius: 10px;
+  margin-top: 5px;
 `
 
 export const LogoBodyNTF = styled.View`

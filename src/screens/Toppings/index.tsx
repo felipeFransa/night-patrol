@@ -18,6 +18,18 @@ const patrolNTF = [
   {local: Users.address, hora: '22:25', IMG: imgStop, text: 'Ronda Fechada!', date: dateAtual},
   {local: Users.address, hora: '23:30', IMG: imgStart,  text: 'Ronda Inicia!', date: dateAtual},
   {local: Users.address, hora: '00:00', IMG: imgStop, text: 'Ronda Fechada!', date: dateAtual},
+  {local: Users.address, hora: '00:40', IMG: imgStart,  text: 'Ronda Inicia!', date: dateAtual},
+  {local: Users.address, hora: '01:20', IMG: imgStop, text: 'Ronda Fechada!', date: dateAtual},
+  {local: Users.address, hora: '01:40', IMG: imgStart,  text: 'Ronda Inicia!', date: dateAtual},
+  {local: Users.address, hora: '01:20', IMG: imgStop, text: 'Ronda Fechada!', date: dateAtual},
+  {local: Users.address, hora: '00:40', IMG: imgStart,  text: 'Ronda Inicia!', date: dateAtual},
+  {local: Users.address, hora: '01:20', IMG: imgStop, text: 'Ronda Fechada!', date: dateAtual},
+  {local: Users.address, hora: '00:40', IMG: imgStart,  text: 'Ronda Inicia!', date: dateAtual},
+  {local: Users.address, hora: '01:20', IMG: imgStop, text: 'Ronda Fechada!', date: dateAtual},
+  {local: Users.address, hora: '00:40', IMG: imgStart,  text: 'Ronda Inicia!', date: dateAtual},
+  {local: Users.address, hora: '01:20', IMG: imgStop, text: 'Ronda Fechada!', date: dateAtual},
+  {local: Users.address, hora: '00:40', IMG: imgStart,  text: 'Ronda Inicia!', date: dateAtual},
+  {local: Users.address, hora: '01:20', IMG: imgStop, text: 'Ronda Fechada!', date: dateAtual},
 ]
  
 export const Toppings = () => {
