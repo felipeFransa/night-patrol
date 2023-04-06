@@ -8,21 +8,7 @@ export const Home = () => {
   const [sendPatrol, setSendPatrol] = useState(0);
   const [madePatrol, setMadePatrol] = useState(0);
   
-  const navigation = useNavigation();
-
-  const handleGoHome = () => {
-    navigation.navigate('Home')
-  }
-  const handleGoTopping = () => {
-    navigation.navigate("Toppings")
-  }
-  const handleGoActivities = () => {
-    navigation.navigate("Activities")
-  }
-
   const [dateSendPatrol, setDateSendPatrol] = useState('00:00')
-
-  
 
   const handleButtonSend = () => {
     setSendPatrol(sendPatrol + 1);

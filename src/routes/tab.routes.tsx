@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Home } from '../screens/Home';
 import { Toppings } from '../screens/Toppings';
 import { Activities } from  '../screens/Activities';
+import { Users } from '../screens/Admin';
 
 const Tab = createBottomTabNavigator();
 
@@ -28,6 +29,9 @@ export default () => {
         case 'Atividades':
           imgSource = require('../assets/config.png');
         break;
+        case 'Usuario':
+          imgSource = require('../assets/retrato.png');
+        break;
       }
 
       return <IMG source={imgSource}/>
@@ -36,6 +40,7 @@ export default () => {
     <Tab.Screen name="Home" component={Home}/>
     <Tab.Screen name="Notificacoes" component={Toppings}/>
     <Tab.Screen name="Atividades" component={Activities}/>
+    <Tab.Screen name="Usuario" component={Users}/>
   </Tab.Navigator>
  )
 }
