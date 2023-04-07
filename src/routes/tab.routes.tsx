@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Home } from '../screens/Home';
 import { Toppings } from '../screens/Toppings';
 import { Activities } from  '../screens/Activities';
-import { Users } from '../screens/Admin';
+import { Admin } from '../screens/Admin';
 
 const Tab = createBottomTabNavigator();
 
@@ -40,7 +40,7 @@ export default () => {
     <Tab.Screen name="Home" component={Home}/>
     <Tab.Screen name="Notificacoes" component={Toppings}/>
     <Tab.Screen name="Atividades" component={Activities}/>
-    <Tab.Screen name="Usuario" component={Users}/>
+    <Tab.Screen name="Usuario" component={Admin}/>
   </Tab.Navigator>
  )
 }

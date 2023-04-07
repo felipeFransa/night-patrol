@@ -21,7 +21,7 @@ export const UserPhoto = styled.Image`
 
 export const UserBoxInfo = styled.View`
   display: flex;
-  justify-content: flex;
+  justify-content: center;
   align-items: center;
   width: 250px;
   height: 250px;
@@ -48,7 +48,7 @@ export const BTNSalve = styled.TouchableOpacity`
   height: 50px;
   border-radius: 20px;
   display: flex;
-  justify-content: center
+  justify-content: center;
   align-items: center;
   background: ${( { theme } ) => theme.COLORS.TEXT_PRIMARY};
 `

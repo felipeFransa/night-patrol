@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as C from './style';
 
-export const Users = () => {
+export const Admin = () => {
   const [firstName, setFirstName] = useState('Felipe');
   const [addresses, setAddresses] = useState('Caicara');
   const [email, setEmail] = useState('');
@@ -10,6 +10,7 @@ export const Users = () => {
   
   return (
     <C.Container>
+      
       <C.UserPhotoBox>
         <C.UserPhoto source={require('../../assets/retrato.png')}/>
       </C.UserPhotoBox>
@@ -32,9 +33,12 @@ export const Users = () => {
           <C.infobody>{groups}</C.infobody>
         </C.UserInfo>
       </C.UserBoxInfo>
+      
       <C.BTNSalve>
         <C.BTNText>Salvar alteracoes!</C.BTNText>
       </C.BTNSalve>
+     
+
     </C.Container>
   )
 }
