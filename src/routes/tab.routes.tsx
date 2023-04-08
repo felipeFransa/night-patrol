@@ -5,6 +5,7 @@ import { Home } from '../screens/Home';
 import { Toppings } from '../screens/Toppings';
 import { Activities } from  '../screens/Activities';
 import { Admin } from '../screens/Admin';
+import { Config } from '../screens/Configs';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,6 +33,9 @@ export default () => {
         case 'Usuario':
           imgSource = require('../assets/retrato.png');
         break;
+        case 'Config':
+          imgSource = require('../assets/definicoes.png');
+        break;
       }
 
       return <IMG source={imgSource}/>
@@ -41,6 +45,7 @@ export default () => {
     <Tab.Screen name="Notificacoes" component={Toppings}/>
     <Tab.Screen name="Atividades" component={Activities}/>
     <Tab.Screen name="Usuario" component={Admin}/>
+    <Tab.Screen name="Config" component={Config}/> 
   </Tab.Navigator>
  )
 }
