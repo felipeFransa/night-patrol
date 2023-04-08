@@ -1,12 +1,10 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import * as C from './style';
 
 export const Config = () => {
   return (
-    <View>
-      <Text>
-        Teste
-      </Text>
-    </View>
+    <C.Container>
+
+    </C.Container>
   )
 }
