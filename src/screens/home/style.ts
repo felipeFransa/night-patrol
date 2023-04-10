@@ -82,6 +82,7 @@ export const BoxNotification = styled.View`
   flex-direction: column;
 `
 export const BoxNotificationArea = styled.ScrollView`
+  height: 300px;
 `
 
 export const NotificationTitle = styled.View`
@@ -141,4 +142,8 @@ export const HoursBody = styled.View`
   height: 30px;
   background: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
   color: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
+`
+export const HoursTxt = styled.Text`
+  font-size: 16px;
+  color: ${({ theme }) => theme.COLORS.TEXT_PRIMARY};
 `

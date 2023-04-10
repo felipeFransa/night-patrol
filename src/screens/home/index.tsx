@@ -1,35 +1,29 @@
-import React, { useState} from "react";
-import { useNavigation } from '@react-navigation/native';
+import React from "react";
+import { patrolNTF } from '../../../api';
 import * as C from './style';
 
 export const Home = () => {
-  const [userName, setUserName] = useState('Felipe');
-  const [userBairro, setUserBairro] = useState('Caicara');
-  const [sendPatrol, setSendPatrol] = useState(0);
-  const [madePatrol, setMadePatrol] = useState(0);
-  
-  const [dateSendPatrol, setDateSendPatrol] = useState('00:00')
 
-  const handleButtonSend = () => {
-    setSendPatrol(sendPatrol + 1);
-  }
-  const handleDate = () => {
-    let DateAtual = new Date();
-    let newDate = `${DateAtual.getHours}`
-    setDateSendPatrol(newDate);
-  }
+  // const handleButtonSend = () => {
+  //   setSendPatrol(sendPatrol + 1);
+  // }
+  // const handleDate = () => {
+  //   let DateAtual = new Date();
+  //   let newDate = `${DateAtual.getHours}`
+  //   setDateSendPatrol(newDate);
+  // }
 
-  const handleButtonSub = () => {
-    setMadePatrol(madePatrol + 1);
+  // const handleButtonSub = () => {
+  //   setMadePatrol(madePatrol + 1);
     
-  }
+  // }
 
   return (
       <C.Container>
         <C.Header>
           <C.UsersInfonsBox>
-            <C.TextUserName>{userName}</C.TextUserName>
-            <C.TextUserAndress>{userBairro}</C.TextUserAndress>
+            <C.TextUserName>Felipe</C.TextUserName>
+            <C.TextUserAndress>Caicara</C.TextUserAndress>
           </C.UsersInfonsBox>
           <C.UsersPhotoBox>
             <C.AreaPhoto source={require('../../assets/user-photo.png')}/>
@@ -37,11 +31,11 @@ export const Home = () => {
         </C.Header>
 
        <C.BoxButton>
-        <C.Button onPress={handleButtonSend}>
+        <C.Button>
           <C.TextButton>Inicia!</C.TextButton>
         </C.Button>
         <C.Button>
-          <C.TextButton onPress={handleButtonSub}>Fecha!</C.TextButton>
+          <C.TextButton>Fecha!</C.TextButton>
         </C.Button>
         <C.Button>
           <C.TextButton>Cobertura!</C.TextButton>
@@ -58,55 +52,22 @@ export const Home = () => {
         </C.NotificationTitle>
 
         <C.BoxNotificationArea>
-
-          <C.NotificationBody>
+          {patrolNTF.map((item, index) =>(
+            <C.NotificationBody key={index}>
             <C.LogoBodyNTF>
-              <C.PatrolStart source={require('../../assets/ciclismo.png')}/>
+              <C.PatrolStart source={item.IMG}/>
             </C.LogoBodyNTF>
             <C.BodyNFT>
-              <C.ContentBodyNFT>{`Ronda iniciada! ${sendPatrol}`}</C.ContentBodyNFT>
-              <C.ContentBodyNFTDate>{`Hora de inicio da ronda ${dateSendPatrol}`}</C.ContentBodyNFTDate>
+              <C.ContentBodyNFT>{item.text}</C.ContentBodyNFT>
+              <C.ContentBodyNFTDate>{item.date}</C.ContentBodyNFTDate>
             </C.BodyNFT>
-            <C.HoursBody></C.HoursBody>
-          </C.NotificationBody>
-          
-          <C.NotificationBody>
-            <C.LogoBodyNTF>
-              <C.PatrolStop source={require('../../assets/patrolStop.png')}/>
-            </C.LogoBodyNTF>
-            <C.BodyNFT>
-              <C.ContentBodyNFT>{`Ronda concluida! ${madePatrol}`}</C.ContentBodyNFT>
-              <C.ContentBodyNFTDate>{`Hora de inicio da ronda ${dateSendPatrol}`}</C.ContentBodyNFTDate>
-            </C.BodyNFT>
-            <C.HoursBody></C.HoursBody>
-          </C.NotificationBody>
-
-          <C.NotificationBody>
-            <C.LogoBodyNTF>
-              <C.PatrolStart source={require('../../assets/ciclismo.png')}/>
-            </C.LogoBodyNTF>
-            <C.BodyNFT>
-              <C.ContentBodyNFT>{`Ronda iniciada! ${sendPatrol}`}</C.ContentBodyNFT>
-              <C.ContentBodyNFTDate>{`Hora de inicio da ronda ${dateSendPatrol}`}</C.ContentBodyNFTDate>
-            </C.BodyNFT>
-            <C.HoursBody></C.HoursBody>
-          </C.NotificationBody>
-
-          <C.NotificationBody>
-            <C.LogoBodyNTF>
-              <C.PatrolStop source={require('../../assets/patrolStop.png')}/>
-            </C.LogoBodyNTF>
-            <C.BodyNFT>
-              <C.ContentBodyNFT>{`Ronda concluida! ${madePatrol}`}</C.ContentBodyNFT>
-              <C.ContentBodyNFTDate>{`Hora de inicio da ronda ${dateSendPatrol}`}</C.ContentBodyNFTDate>
-            </C.BodyNFT>
-            <C.HoursBody></C.HoursBody>
-          </C.NotificationBody>
-       
-        </C.BoxNotificationArea>
-        
-      </C.BoxNotification>
-
+            <C.HoursBody>
+              <C.HoursTxt>{item.hora}</C.HoursTxt>
+            </C.HoursBody>
+            </C.NotificationBody>
+          ))}
+          </C.BoxNotificationArea>
+        </C.BoxNotification>
       </C.Container>
   )
 }
