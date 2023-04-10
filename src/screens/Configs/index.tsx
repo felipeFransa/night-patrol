@@ -1,9 +1,15 @@
 import React from 'react';
+import MainStack from '../../routes/stack.routes';
 import * as C from './style';
 
 export const Config = () => {
+  // const handlePerfil = () => {
+  //   props.navigation.navigate('Admin')
+  // }
+
   return (
     <C.Container>
+      
       <C.BodyConfig>
 
         <C.ConfigBox>
