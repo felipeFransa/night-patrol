@@ -10,6 +10,7 @@ export declare global {
       Config: undefined,
       Admin: undefined,
       Clients: undefined,
+      About: undefined,
     }
   }
 }

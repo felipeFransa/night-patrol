@@ -24,17 +24,17 @@ export const ConfigBox = styled.TouchableOpacity`
   height: 100px;
 `
 export const BoxIMGConfig = styled.View`
-  background: #fff;
   display: flex;
   width: 50px;
   height: 50px;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
+  border: 1px solid black;
 `
 export const IMGConfig = styled.Image`
-  width: 50%;
-  height: 50%;
+  width: 70%;
+  height: 70%;
 `
 export const BoxText = styled.View`
   display: flex;
@@ -67,12 +67,12 @@ export const BoxLogout = styled.View`
 `
 export const BTNLogoutBox = styled.TouchableOpacity`
   display: flex;
-  background: #fff;
   justify-content: center;
   align-items: center;
   width: 70px;
   height: 70px;
   border-radius: 10px;
+  border: 1px solid black;
 `
 export const BTNLogoutIMG = styled.Image`
   width: 50%;

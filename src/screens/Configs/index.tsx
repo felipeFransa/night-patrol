@@ -11,6 +11,9 @@ export const Config = () => {
   const handleClient = () => {
     navigation.navigate("Clients")
   }
+  const handleAbout = () => {
+    navigation.navigate("About")
+  }
 
   return (
     <C.Container>
@@ -31,10 +34,10 @@ export const Config = () => {
 
         <C.ConfigBox>
           <C.BoxIMGConfig>
-            <C.IMGConfig source={require('../../assets/sino.png')}/> 
+            <C.IMGConfig source={require('../../assets/grupo.png')}/> 
           </C.BoxIMGConfig>
           <C.BoxText>
-            <C.TextConfig>Notificações</C.TextConfig>
+            <C.TextConfig>Grupo</C.TextConfig>
           </C.BoxText>
           <C.BoxArrow>
             <C.IMGArrowConfig source={require('../../assets/arrow.png')}/>
@@ -53,7 +56,7 @@ export const Config = () => {
           </C.BoxArrow>
         </C.ConfigBox>
 
-        <C.ConfigBox>
+        <C.ConfigBox onPress={handleAbout}>
           <C.BoxIMGConfig>
             <C.IMGConfig source={require('../../assets/interrogatorio.png')}/> 
           </C.BoxIMGConfig>
