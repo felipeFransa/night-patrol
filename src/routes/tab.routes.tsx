@@ -24,16 +24,13 @@ export default () => {
         case 'Home':
           imgSource = require('../assets/casa.png');
         break;
-        case 'Notificacoes':
+        case 'Notificações':
           imgSource = require('../assets/sino.png');
         break;
         case 'Atividades':
           imgSource = require('../assets/config.png');
         break;
-        case 'Usuario':
-          imgSource = require('../assets/retrato.png');
-        break;
-        case 'Config':
+        case 'Configurações':
           imgSource = require('../assets/definicoes.png');
         break;
       }
@@ -42,10 +39,9 @@ export default () => {
     }
   })}>
     <Tab.Screen name="Home" component={Home}/>
-    <Tab.Screen name="Notificacoes" component={Toppings}/>
+    <Tab.Screen name="Notificações" component={Toppings}/>
     <Tab.Screen name="Atividades" component={Activities}/>
-    <Tab.Screen name="Usuario" component={Admin}/>
-    <Tab.Screen name="Config" component={Config}/> 
+    <Tab.Screen name="Configurações" component={Config}/> 
   </Tab.Navigator>
  )
 }

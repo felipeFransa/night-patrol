@@ -23,7 +23,7 @@ export const Config = () => {
             <C.IMGConfig source={require('../../assets/sino.png')}/> 
           </C.BoxIMGConfig>
           <C.BoxText>
-            <C.TextConfig>Notifications</C.TextConfig>
+            <C.TextConfig>Notificações</C.TextConfig>
           </C.BoxText>
           <C.BoxArrow>
             <C.IMGArrowConfig source={require('../../assets/arrow.png')}/>
@@ -41,6 +41,26 @@ export const Config = () => {
             <C.IMGArrowConfig source={require('../../assets/arrow.png')}/>
           </C.BoxArrow>
         </C.ConfigBox>
+
+        <C.ConfigBox>
+          <C.BoxIMGConfig>
+            <C.IMGConfig source={require('../../assets/interrogatorio.png')}/> 
+          </C.BoxIMGConfig>
+          <C.BoxText>
+            <C.TextConfig>Sobre</C.TextConfig>
+          </C.BoxText>
+          <C.BoxArrow>
+            <C.IMGArrowConfig source={require('../../assets/arrow.png')}/>
+          </C.BoxArrow>
+        </C.ConfigBox>
+
+        <C.BoxLogout>
+          <C.BTNLogoutBox>
+            <C.BTNLogoutIMG source={require('../../assets/sair.png')}/>
+            <C.BTNLogoutText>Sair</C.BTNLogoutText>
+          </C.BTNLogoutBox>
+        </C.BoxLogout>
+
 
       </C.BodyConfig>
     </C.Container>
