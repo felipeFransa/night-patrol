@@ -1,5 +1,5 @@
 import React from "react";
-import { patrolNTF } from '../../../api';
+import { patrolNTF, Users } from '../../../api';
 import * as C from './style';
 
 export const Home = () => {
@@ -12,18 +12,15 @@ export const Home = () => {
   //   let newDate = `${DateAtual.getHours}`
   //   setDateSendPatrol(newDate);
   // }
-
   // const handleButtonSub = () => {
   //   setMadePatrol(madePatrol + 1);
-    
   // }
-
   return (
       <C.Container>
         <C.Header>
           <C.UsersInfonsBox>
-            <C.TextUserName>Felipe</C.TextUserName>
-            <C.TextUserAndress>Caicara</C.TextUserAndress>
+            <C.TextUserName>{Users.firstName}</C.TextUserName>
+            <C.TextUserAndress>{Users.address}</C.TextUserAndress>
           </C.UsersInfonsBox>
           <C.UsersPhotoBox>
             <C.AreaPhoto source={require('../../assets/user-photo.png')}/>

@@ -9,6 +9,7 @@ export declare global {
       Activities: undefined,
       Config: undefined,
       Admin: undefined,
+      Clients: undefined,
     }
   }
 }

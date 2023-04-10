@@ -8,6 +8,9 @@ export const Config = () => {
   const handlePerfil = () => {
     navigation.navigate("Admin")
   }
+  const handleClient = () => {
+    navigation.navigate("Clients")
+  }
 
   return (
     <C.Container>
@@ -38,7 +41,7 @@ export const Config = () => {
           </C.BoxArrow>
         </C.ConfigBox>
 
-        <C.ConfigBox>
+        <C.ConfigBox onPress={handleClient}>
           <C.BoxIMGConfig>
             <C.IMGConfig source={require('../../assets/clients.png')}/> 
           </C.BoxIMGConfig>

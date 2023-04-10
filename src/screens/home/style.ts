@@ -82,15 +82,17 @@ export const BoxNotification = styled.View`
   flex-direction: column;
 `
 export const BoxNotificationArea = styled.ScrollView`
+  width: 300px;
   height: 300px;
 `
 
 export const NotificationTitle = styled.View`
-  width: 100%;
-  height: 30px;
+  width: 300px;
+  height: 50px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
 `
 
 export const TitleNotification = styled.Text`
@@ -107,7 +109,11 @@ export const NotificationBody = styled.View`
   height: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid ${({ theme }) => theme.COLORS.TEXT_PRIMARY};
+  border-radius: 10px;
+  margin-top: 5px;
 `
 
 export const LogoBodyNTF = styled.View`
@@ -126,8 +132,11 @@ export const PatrolStop = styled.Image`
   height: 32px;
 `
 export const BodyNFT = styled.View`
+  width: 200px;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 `
 export const ContentBodyNFT = styled.Text`
   font-size: 16px;
@@ -138,10 +147,8 @@ export const ContentBodyNFTDate = styled.Text`
   color: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
 `
 export const HoursBody = styled.View`
-  width: 30px;
+  width: 50px;
   height: 30px;
-  background: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
-  color: ${({ theme }) => theme.COLORS.TEXT_SECONDARY};
 `
 export const HoursTxt = styled.Text`
   font-size: 16px;
