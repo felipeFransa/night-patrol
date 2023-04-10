@@ -14,7 +14,7 @@ export const Config = () => {
 
         <C.ConfigBox>
           <C.BoxIMGConfig>
-            <C.IMGConfig source={require('../../assets/retrato.png')}/> 
+            <C.IMGConfig source={require('../../assets/user.png')}/> 
           </C.BoxIMGConfig>
           <C.BoxText>
             <C.TextConfig>Perfil</C.TextConfig>

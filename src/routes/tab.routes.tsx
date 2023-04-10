@@ -28,10 +28,10 @@ export default () => {
           imgSource = require('../assets/sino.png');
         break;
         case 'Atividades':
-          imgSource = require('../assets/config.png');
+          imgSource = require('../assets/list.png');
         break;
         case 'Configurações':
-          imgSource = require('../assets/definicoes.png');
+          imgSource = require('../assets/config.png');
         break;
       }
 

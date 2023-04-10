@@ -19,11 +19,12 @@ export const BoxNotificationArea = styled.ScrollView`
 `
 
 export const NotificationTitle = styled.View`
-  width: 100%;
-  height: 30px;
+  width: 300px;
+  height: 50px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
 `
 
 export const TitleNotification = styled.Text`
@@ -37,10 +38,11 @@ export const TextSecudary = styled.Text`
 
 export const NotificationBody = styled.View`
   width: 300px;
-  height: auto;
+  height: 50px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
   border: 1px solid ${({ theme }) => theme.COLORS.TEXT_PRIMARY};
   border-radius: 10px;
   margin-top: 5px;

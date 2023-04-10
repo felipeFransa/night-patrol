@@ -32,7 +32,7 @@ export const Home = () => {
             <C.TextUserAndress>{userBairro}</C.TextUserAndress>
           </C.UsersInfonsBox>
           <C.UsersPhotoBox>
-            <C.AreaPhoto source={require('../../assets/retrato.png')}/>
+            <C.AreaPhoto source={require('../../assets/user-photo.png')}/>
           </C.UsersPhotoBox>
         </C.Header>
 
