@@ -5,7 +5,6 @@ import { ThemeProvider } from 'styled-components/native';
 import { ThemeBTN, TextBTN } from './styleGlobal'
 
 import MainStack from './src/routes/stack.routes';
-import Tab from './src/routes/tab.routes';
 
 import  light from './src/theme/light';
 import dark from './src/theme/dark';
@@ -21,7 +20,7 @@ const app = () => {
   return (
     <NavigationContainer>
       <ThemeProvider theme={theme}>
-        <Tab />
+        <MainStack />
       </ThemeProvider>
     </NavigationContainer>
   );

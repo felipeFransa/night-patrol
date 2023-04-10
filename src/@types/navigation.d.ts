@@ -7,6 +7,8 @@ export declare global {
       SignUp: undefined,
       Login: undefined,
       Activities: undefined,
+      Config: undefined,
+      Admin: undefined,
     }
   }
 }

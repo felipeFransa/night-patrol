@@ -1,19 +1,21 @@
 import React from 'react';
-import MainStack from '../../routes/stack.routes';
+import { useNavigation } from '@react-navigation/native';
 import * as C from './style';
 
 export const Config = () => {
-  // const handlePerfil = () => {
-  //   props.navigation.navigate('Admin')
-  // }
+  const navigation = useNavigation();
+
+  const handlePerfil = () => {
+    navigation.navigate("Admin")
+  }
 
   return (
     <C.Container>
       
       <C.BodyConfig>
 
-        <C.ConfigBox>
-          <C.BoxIMGConfig>
+        <C.ConfigBox onPress={handlePerfil}>
+          <C.BoxIMGConfig >
             <C.IMGConfig source={require('../../assets/user.png')}/> 
           </C.BoxIMGConfig>
           <C.BoxText>

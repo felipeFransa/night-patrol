@@ -12,7 +12,7 @@ export const Admin = () => {
     <C.Container>
       
       <C.UserPhotoBox>
-        <C.UserPhoto source={require('../../assets/retrato.png')}/>
+        <C.UserPhoto source={require('../../assets/user-photo.png')}/>
       </C.UserPhotoBox>
 
       <C.UserBoxInfo>
