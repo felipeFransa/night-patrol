@@ -11,6 +11,7 @@ export declare global {
       Admin: undefined,
       Clients: undefined,
       About: undefined,
+      StartPatrol: undefined,
     }
   }
 }

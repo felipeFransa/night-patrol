@@ -4,6 +4,8 @@ import { Config } from '../screens/Configs';
 import { Admin } from '../screens/Admin';
 import { Clients } from '../screens/Clients';
 import { About } from '../screens/About';
+import { StartPatrol } from '../screens/StartPatrol';
+
 import Tab from './tab.routes';
 
 const MainStack = createNativeStackNavigator();
@@ -18,6 +20,7 @@ export default () => {
       <MainStack.Screen name="Admin" component={Admin}/>
       <MainStack.Screen name="Clients" component={Clients}/>
       <MainStack.Screen name="About" component={About}/>
+      <MainStack.Screen name="StartPatrol" component={StartPatrol}/>
     </MainStack.Navigator>
   );
 }

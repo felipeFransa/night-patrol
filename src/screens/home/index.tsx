@@ -1,20 +1,14 @@
 import React from "react";
 import { patrolNTF, Users } from '../../../api';
+import { useNavigation } from '@react-navigation/native';
 import * as C from './style';
 
 export const Home = () => {
+  const navigation = useNavigation();
 
-  // const handleButtonSend = () => {
-  //   setSendPatrol(sendPatrol + 1);
-  // }
-  // const handleDate = () => {
-  //   let DateAtual = new Date();
-  //   let newDate = `${DateAtual.getHours}`
-  //   setDateSendPatrol(newDate);
-  // }
-  // const handleButtonSub = () => {
-  //   setMadePatrol(madePatrol + 1);
-  // }
+  const handleStartPatrol = () => {
+    navigation.navigate("StartPatrol")
+  }
   return (
       <C.Container>
         <C.Header>
@@ -28,7 +22,7 @@ export const Home = () => {
         </C.Header>
 
        <C.BoxButton>
-        <C.Button>
+        <C.Button onPress={handleStartPatrol}>
           <C.TextButton>Inicia!</C.TextButton>
         </C.Button>
         <C.Button>
