@@ -15,9 +15,6 @@ export const BoxNotification = styled.View`
   align-items: center;
   flex-direction: column;
 `
-export const BoxNotificationArea = styled.ScrollView`
-`
-
 export const NotificationTitle = styled.View`
   background: ${({theme})=> theme.COLORS.PRIMARY_900};
   width: 100%;
@@ -27,7 +24,6 @@ export const NotificationTitle = styled.View`
   justify-content: space-around;
   align-items: center;
 `
-
 export const TitleNotification = styled.Text`
   font-size: 16px;
   color: ${({theme})=> theme.COLORS.BACKGROUND};
@@ -37,9 +33,11 @@ export const TextSecudary = styled.Text`
   color: ${({ theme }) => theme.COLORS.BACKGROUND};
 `
 
+export const BoxNotificationArea = styled.ScrollView`
+`
 export const NotificationBody = styled.View`
   width: 300px;
-  height: 50px;
+  height: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -63,6 +61,10 @@ export const PatrolIMG = styled.Image`
 export const BodyNFT = styled.View`
   display: flex;
   flex-direction: column;
+`
+export const StagesNFT = styled.View`
+  width: auto;
+  height: auto;
 `
 export const ContentBodyNFT = styled.Text`
   font-size: 16px;

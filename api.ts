@@ -18,6 +18,15 @@ export const api = {
     return response.data;
   }
 }
+type TypePatrolNTF = {
+  hoursStart: string;
+  hoursStop: string;
+  hoursBreak: string;
+  localStart: string;
+  localStop: string;
+  IMG: any;
+  date: string;
+}
 
 const imgStart = require('./src/assets/ciclismo.png');
 const imgStop = require('./src/assets/patrolStop.png');
@@ -52,6 +61,9 @@ export const patrolNTF = [
   {local: Users.address, hora: '01:20', IMG: imgStop, text: 'Ronda Fechada!', date: dateAtual},
 ]
 
+export const PatrolNTF: TypePatrolNTF[] = [
+  {localStart: 'hahha', date: '22:00', localStop: 'rua tal', hoursBreak: '11:00', hoursStart: '12:00', hoursStop: '02:00', IMG:imgStart},
+]
 export const UserClients = [
   {name: 'Fulana', rua: 'Exemplo',  telefone: '31-97100-2255', casa: '320', bairro: 'caicara', IMGClient: imgUsers},
   {name: 'Fulana 2', rua: 'Exemplo',  telefone: '31-97100-2255', casa: '320', bairro: 'caicara', IMGClient: imgUsers},
