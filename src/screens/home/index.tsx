@@ -1,10 +1,43 @@
-import React from "react";
-import { patrolNTF, Users } from '../../../api';
+import React, { useState, useEffect } from "react";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Users } from '../../../api';
 import { useNavigation } from '@react-navigation/native';
 import * as C from './style';
 
+const IMG = require('../../assets/ciclismo.png');
+
+export type CardProps = {
+  _id: string;
+  title: string;
+  date: string;
+  hours: string;
+  newDate: Date
+}
+type Props = {
+  data: CardProps;
+  onPress: () => void;
+}
+
 export const Home = () => {
+  const [data, setData] = useState<CardProps[]>([]);
+  const [nameBD, setNameBD] = useState(`@${Users.firstName}-${Users.address}`);
+
   const navigation = useNavigation();
+
+  const handleFetchNotifications = async () => {
+    try {
+      const response = await AsyncStorage.getItem(nameBD)
+      const data = response ? JSON.parse(response) : {};
+      setData([data]);
+      console.log([data])
+    }catch(err){
+      console.log(err);
+    }
+  }
+
+  useEffect(() => {
+    handleFetchNotifications()
+  }, [])
 
   const handleStartPatrol = () => {
     navigation.navigate("StartPatrol")
@@ -43,20 +76,20 @@ export const Home = () => {
         </C.NotificationTitle>
 
         <C.BoxNotificationArea>
-          {patrolNTF.map((item, index) =>(
-            <C.NotificationBody key={index}>
-            <C.LogoBodyNTF>
-              <C.PatrolStart source={item.IMG}/>
-            </C.LogoBodyNTF>
-            <C.BodyNFT>
-              <C.ContentBodyNFT>{item.text}</C.ContentBodyNFT>
-              <C.ContentBodyNFTDate>{item.date}</C.ContentBodyNFTDate>
-            </C.BodyNFT>
-            <C.HoursBody>
-              <C.HoursTxt>{item.hora}</C.HoursTxt>
-            </C.HoursBody>
-            </C.NotificationBody>
-          ))}
+          {data.map((item, index) =>(
+              <C.NotificationBody key={index}>
+                <C.LogoBodyNTF>
+                  <C.PatrolStart source={IMG}/>
+                </C.LogoBodyNTF>
+                <C.BodyNFT>
+                  <C.ContentBodyNFT>{item.title}</C.ContentBodyNFT>
+                  <C.ContentBodyNFTDate>{item.date}</C.ContentBodyNFTDate>
+                </C.BodyNFT>
+                <C.HoursBody>
+                  <C.HoursTxt>{item.hours}</C.HoursTxt>
+                </C.HoursBody>
+              </C.NotificationBody>
+            ))}
           </C.BoxNotificationArea>
         </C.BoxNotification>
       </C.Container>

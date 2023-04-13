@@ -1,9 +1,39 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Users } from '../../../api';
 import * as C from './style';
-import { patrolNTF, PatrolNTF } from '../../../api';
+
+const IMG = require('../../assets/ciclismo.png');
+
+export type CardProps = {
+  _id: string;
+  title: string;
+  date: string;
+  hours: string;
+  newDate: Date
+}
+type Props = {
+  data: CardProps;
+  onPress: () => void;
+}
  
 export const Toppings = () => {
-  const [loadBreakPatrol, setLoadBreakPatrol] = useState(false)
+  const [data, setData] = useState<CardProps[]>([]);
+  const [nameBD, setNameBD] = useState(`@${Users.firstName}-${Users.address}`);
+
+  const handleFetchNotifications = async () => {
+    try {
+      const response = await AsyncStorage.getItem(nameBD)
+      const data = response ? JSON.parse(response) : {};
+      setData([data]);
+      console.log([data])
+    }catch(err){
+      console.log(err);
+    }
+  }
+  useEffect(() => {
+    handleFetchNotifications()
+  }, [])
 
   return (
     <C.Container>
@@ -15,49 +45,22 @@ export const Toppings = () => {
         </C.NotificationTitle>
 
         <C.BoxNotificationArea>
-          {/* {PatrolNTF.map((item, index) =>(
-            <C.NotificationBody key={index}>
-              <C.LogoBodyNTF>
-                <C.PatrolIMG source={item.IMG}/>
-              </C.LogoBodyNTF>
 
-              <C.BodyNFT>
-                <C.StagesNFT>
-                  <C.ContentBodyNFT>Ronda Iniciada as {item.hoursStart}</C.ContentBodyNFT>
-                  <C.ContentBodyNFTDate>{item.date} localizacão {item.localStart}</C.ContentBodyNFTDate>
-                </C.StagesNFT>
-                <C.StagesNFT>
-                  <C.ContentBodyNFT>Ronda finalizada as {item.hoursStop}</C.ContentBodyNFT>
-                  <C.ContentBodyNFTDate>{item.date} localizacão {item.localStop}</C.ContentBodyNFTDate>
-                </C.StagesNFT>
-              </C.BodyNFT>
-              
-              <C.HoursBody>
-                <C.HoursTxt>{item.hoursStop}</C.HoursTxt>
-              </C.HoursBody>
-            </C.NotificationBody>
-          ))} */}
-
-
-
-
-            {patrolNTF.map((x, index) =>(
+            {data.map((item, index) =>(
               <C.NotificationBody key={index}>
                 <C.LogoBodyNTF>
-                  <C.PatrolIMG source={x.IMG}/>
+                  <C.PatrolIMG source={IMG}/>
                 </C.LogoBodyNTF>
                 <C.BodyNFT>
-                  <C.ContentBodyNFT>{x.text}</C.ContentBodyNFT>
-                  <C.ContentBodyNFTDate>{x.date}</C.ContentBodyNFTDate>
+                  <C.ContentBodyNFT>{item.title}</C.ContentBodyNFT>
+                  <C.ContentBodyNFTDate>{item.date}</C.ContentBodyNFTDate>
                 </C.BodyNFT>
                 <C.HoursBody>
-                  <C.HoursTxt>{x.hora}</C.HoursTxt>
+                  <C.HoursTxt>{item.hours}</C.HoursTxt>
                 </C.HoursBody>
               </C.NotificationBody>
             ))}
-
         </C.BoxNotificationArea>
-        
       </C.BoxNotification>
 
     </C.Container>

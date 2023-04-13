@@ -1,39 +1,35 @@
 import React, { useState, useEffect} from 'react';
-import { Toast } from 'react-native-toast-message/lib/src/Toast';
+import { Users } from '../../../api';
 import uuid from 'react-native-uuid';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as c from './style';
 
 export const StartPatrol = () => {
-  const [userAdmin, setUserAdmin] = useState('Felipe');
-  const [userAddress, setUserAddress] = useState('Caiçaras');
-  const [nameBD, setNameBD] = useState(`${userAdmin}-${userAddress}`);
+  const [nameBD, setNameBD] = useState(`@${Users.firstName}-${Users.address}`);
   const [start, setStart] = useState(false);
   const [called, setCalled] = useState(false);
 
   const HandleNewPatrol = async () => {
+    try {
     const id = uuid.v4();
     const Data = new Date();
     const Day = `${Data.getDate()}/${Data.getDay()}/${Data.getFullYear()}`;
     const Hours = `${Data.getHours()}:${Data.getMinutes()}`;
 
-
     const newStartPatrol = {
-      _id: id,
+      id: id,
       title: 'Ronda Iniciada',
-      data: Day,
-      horas: Hours,
+      date: Day,
+      hours: Hours,
       newDate: new Date()
     }
-
     await AsyncStorage.setItem(nameBD, JSON.stringify(newStartPatrol));
-
     console.log(newStartPatrol);
-
-    Toast.show({
-      type: 'success',
-      text1: 'Ronda Iniciada'
-    });
+    alert('Ronda Iniciada com Sucesso!')
+  } catch (err) {
+    console.log(err);
+    alert('Erro ao inciar ronda, tenta novamente')
+  }
   }
 
   useEffect(()=>{
@@ -45,7 +41,7 @@ export const StartPatrol = () => {
       {!start && 
         <c.ContainerSP>
           <c.BoxText>
-            <c.Text>{userAddress}</c.Text>
+            <c.Text>{Users.address}</c.Text>
           </c.BoxText>
           <c.BoxText>
             <c.Text>{}</c.Text>
