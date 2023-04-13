@@ -1,10 +1,21 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect} from 'react';
 import * as c from './style';
 
 export const StartPatrol = () => {
   const [localization, setLocation] = useState('Caicaira');
-  const [hours, setHours] = useState('22:00');
-  const [date, setDate] = useState('11/04/2023')
+  const [hours, setHours] = useState('');
+  const [date, setDate] = useState('')
+
+  const handleNewDate = () => {
+    const data = new Date();
+    const NewDate = `${data.getUTCDate()}/${data.getUTCDay()}/${data.getUTCFullYear()}`
+    const NewHours = `${data.getHours()}:${data.getUTCMinutes()}`;
+    setHours(NewHours)
+    setDate(NewDate);
+  }
+  useEffect(()=>{
+    handleNewDate();
+  },[])
 
   return (
     <c.Container>
