@@ -57,6 +57,27 @@ export const MSGStart = styled.Text`
   font-size: 18px;
 `
 export const BTNSend = styled.TouchableOpacity`
+  background: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid ${({theme})=>theme.COLORS.PRIMARY_900};
+  border-radius: 10px;
+  width: auto;
+  height: auto;
+`
+export const BTNSendRED = styled.TouchableOpacity`
+  background: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid ${({theme})=>theme.COLORS.PRIMARY_900};
+  border-radius: 10px;
+  width: auto;
+  height: auto;
+`
+export const BTNSendGREEN = styled.TouchableOpacity`
+  margin-top: 20px;
   background: green;
   display: flex;
   justify-content: center;
