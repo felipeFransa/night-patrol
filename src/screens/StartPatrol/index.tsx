@@ -21,7 +21,9 @@ export const StartPatrol = () => {
   const [data, setData] = useState<CardProps[]>([]);
   const [nameBD, setNameBD] = useState(`@${Users.firstName}-${Users.address}`);
   const [start, setStart] = useState(false);
-  const [called, setCalled] = useState(false);
+  const [stopBTN, setStopBTN] = useState(true);
+  const [pauseBTN, setPauseBTN] = useState(true);
+  const [pauseStart, setPauseStart] = useState(true);
 
   const { getItem, setItem } = useAsyncStorage(nameBD);
   const navigation = useNavigation();
@@ -50,6 +52,7 @@ export const StartPatrol = () => {
     console.log(newStartPatrol);
     alert('Ronda Iniciada com Sucesso!');
     setStart(true);
+    setPauseStart(false);
   } catch (err) {
     console.log(err);
     alert('Erro ao inciar ronda, tenta novamente')
@@ -78,7 +81,40 @@ export const StartPatrol = () => {
     setData(data)
     console.log(newStartPatrol);
     alert('Ronda Pausada');
-    setStart(true);
+    setPauseBTN(false);
+    setPauseStart(true);
+    setStopBTN(false);
+  } catch (err) {
+    console.log(err);
+    alert('Erro ao concluir ronda, tenta novamente')
+  }
+  }
+  const HandlePauseStartPatrol = async () => {
+    try {
+    const id = uuid.v4();
+    const Data = new Date();
+    const Day = `${Data.getDate()}/${Data.getDay()}/${Data.getFullYear()}`;
+    const Hours = `${Data.getHours()}:${Data.getMinutes()}`;
+
+    const newStartPatrol = {
+      id: id,
+      title: 'Ronda retomada',
+      date: Day,
+      hours: Hours,
+      newDate: new Date()
+    }
+    const response = await getItem();
+    const previonsData = response ? JSON.parse(response) : [];
+
+    const data = [...previonsData, newStartPatrol];
+
+    await setItem(JSON.stringify(data));
+    setData(data)
+    console.log(newStartPatrol);
+    alert('Ronda Pausada');
+    setPauseBTN(true);
+    setPauseStart(false);
+    setStopBTN(true);
   } catch (err) {
     console.log(err);
     alert('Erro ao concluir ronda, tenta novamente')
@@ -116,19 +152,6 @@ export const StartPatrol = () => {
 
   return (
     <C.Container>
-      {!start && 
-        <C.ContainerSP>
-          <C.BoxText>
-            <C.Text>{Users.address}</C.Text>
-          </C.BoxText>
-          <C.BoxText>
-            <C.Text>{}</C.Text>
-          </C.BoxText>
-          <C.BoxText>
-            <C.Text>{}</C.Text>
-          </C.BoxText>
-        </C.ContainerSP>
-      }
       <C.BoxStartNotification>
       {!start && 
         <C.BTNSend onPress={HandleNewPatrol}>
@@ -136,17 +159,26 @@ export const StartPatrol = () => {
         </C.BTNSend>
       }
       </C.BoxStartNotification>
-      {start && 
+      {start &&
         <C.BoxStartNotification>
+          {pauseBTN && 
           <C.BTNSendRED onPress={HandlePausePatrol}>
             <C.BTNText>Pausa Ronda</C.BTNText>
           </C.BTNSendRED>
-
+          }
+          {pauseStart && 
+          <C.BTNSend onPress={HandlePauseStartPatrol}>
+            <C.BTNText>Retoma Ronda</C.BTNText>
+          </C.BTNSend>
+          }
+          {stopBTN && 
           <C.BTNSendGREEN onPress={HandleStopPatrol}>
             <C.BTNText>Concluir Ronda</C.BTNText>
           </C.BTNSendGREEN>
+          }
         </C.BoxStartNotification>
       }
+      
     </C.Container>
   )
 }
