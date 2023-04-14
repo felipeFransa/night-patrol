@@ -18,7 +18,7 @@ type Props = {
 }
 
 export const Login = () => {
-  const [nameBD, setNameBD] = useState(`@${Users.firstName}-${Users.address}`);
+  const [nameBD, setNameBD] = useState(`@${Users.firstName}:${Users.address}`);
 
   const [userAdmin, setUserAdmin] = useState<UserAdminProps>();
   const [permission, setPermission] = useState(false);
@@ -43,11 +43,15 @@ export const Login = () => {
       setUserAdmin(user);
       setPermission(true);
       console.log(user);
+      alert('Apagados')
     }catch(e) {
       alert('Usuario não encontrado')
       setPermission(false)
     }
   }
+  useEffect(()=>{
+    
+  },[])
   
 
   return (
@@ -66,9 +70,7 @@ export const Login = () => {
             <C.TextArea>Senha:</C.TextArea>
             <C.Input placeholder='Digite sua senha' value={password} secureTextEntry={true} onChangeText={t=>setPassword(t)} />
           </C.InputArea>
-          <C.Button onPress={handleVerify}>
-            <C.TextButton>Login</C.TextButton>
-          </C.Button>
+          <C.Button title="Login" onPress={handleVerify} />
         </C.ContainerForm>
         <C.ButtonToRegister onPress={handleGoToRegister}>
           <C.ToRegister>

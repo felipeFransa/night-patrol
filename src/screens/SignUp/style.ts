@@ -54,6 +54,13 @@ export const Button = styled.Button`
   height: 30px;
   border-radius: 10px;
 `
+export const ButtonToLogin = styled.TouchableOpacity`
+  width: 100px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 export const ToLogin = styled.Text`
   font-size: 12px;
   color: ${({ theme }) => theme.COLORS.TEXT_PRIMARY};

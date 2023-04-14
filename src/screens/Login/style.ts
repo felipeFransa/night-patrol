@@ -44,19 +44,18 @@ export const Input = styled.TextInput`
   color: ${({ theme }) => theme.COLORS.TEXT_PRIMARY};
   text-align: center;
   width: 300px;
-  height: 30px;
+  height: 50px;
   border: 1px solid ${({ theme }) => theme.COLORS.PRIMARY_900};
-  border-radius: 20px;
+  border-radius: 10px;
   margin-top: 5px;
 `
-export const Button = styled.TouchableOpacity`
+export const Button = styled.Button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 150px;
+  width: 100px;
   height: 60px;
   border-radius: 10px;
-  background: ${({theme})=> theme.COLORS.TEXT_SECONDARY};
 `
 export const TextButton = styled.Text`
   font-size: 30px;

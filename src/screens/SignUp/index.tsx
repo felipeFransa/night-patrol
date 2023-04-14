@@ -29,13 +29,13 @@ export const SignUp = () => {
 
   const { getItem } = useAsyncStorage(nameBD);
 
-  const handleGoToRegister = () => {
+  const handleGoToLogin = () => {
     navigation.navigate("Login")
   }
   const newUserSignup = () => {
     try {
       const id = uuid.v4();
-      
+
     }catch(error){
       console.log(error);
       alert('Não foi possível cadastro esse usuario')
@@ -63,9 +63,11 @@ export const SignUp = () => {
           </C.InputArea>
           <C.Button title="Cadastre-se"/>
         </C.ContainerForm>
-        <C.ToLogin>
-          Já possui conta, faça seu login!
-        </C.ToLogin>
+        <C.ButtonToLogin onPress={handleGoToLogin}>
+          <C.ToLogin>
+            Já possui conta, faça seu login!
+          </C.ToLogin>
+        </C.ButtonToLogin>
       </C.Container>
   )
 }
