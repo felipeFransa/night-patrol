@@ -23,16 +23,25 @@ export const Home = () => {
   const [nameBD, setNameBD] = useState(`@${Users.firstName}-${Users.address}`);
 
   const navigation = useNavigation();
-  const { getItem } = useAsyncStorage(nameBD);
+  const { getItem, removeItem } = useAsyncStorage(nameBD);
 
   const handleFetchNotifications = async () => {
     try {
       const response = await getItem()
-    const data = response ? JSON.parse(response) : [];
+      const data = response ? JSON.parse(response) : [];
       setData(data);
       console.log(data)
     }catch(err){
       console.log(err);
+    }
+  }
+  const handleRemoveListNotifications = async () => {
+    try {
+      const response = await removeItem();
+      console.log(response)
+      alert('Mensagens deletadas')
+    }catch(err) {
+      alert('Erro ao delete Mensagens')
     }
   }
   useFocusEffect(useCallback(()=>{
@@ -59,8 +68,8 @@ export const Home = () => {
         <C.Button onPress={handleStartPatrol}>
           <C.TextButton>Inicia!</C.TextButton>
         </C.Button>
-        <C.Button>
-          <C.TextButton>Boas Vindas!</C.TextButton>
+        <C.Button onPress={handleRemoveListNotifications}>
+          <C.TextButton>Delete</C.TextButton>
         </C.Button>
        </C.BoxButton>
        

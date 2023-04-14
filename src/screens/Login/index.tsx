@@ -1,22 +1,51 @@
 import React, { useState, useEffect } from "react";
+import { Users } from '../../../api';
+import { useAsyncStorage } from "@react-native-async-storage/async-storage";
+import { useNavigation } from '@react-navigation/native';
 import * as C from './style';
 
+export type UserAdminProps = {
+  _id: string;
+  email: string;
+  password: string;
+  address: string;
+  phoneNumber: string;
+  grupo?: string;
+}
+type Props = {
+  data: UserAdminProps;
+  onPress: () => void;
+}
 
 export const Login = () => {
+  const [nameBD, setNameBD] = useState(`@${Users.firstName}-${Users.address}`);
 
-  const [status, setStatus] = useState(false);
-  const [permission, setPermission] = useState('');
+  const [userAdmin, setUserAdmin] = useState<UserAdminProps>();
+  const [permission, setPermission] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const navigation = useNavigation();
+
+  const { getItem } = useAsyncStorage(nameBD);
+
+  const handleGoToRegister = () => {
+    navigation.navigate("SignUp")
+  }
+  useEffect(()=>{
+
+  },[])
+
   const handleVerify = async () => {
     try {
-      setStatus(!status);
-      setPermission('Acesso Liberado!');
-      setStatus(true);
+      const response = await getItem()
+      const user = response ? JSON.parse(response) : [];
+      setUserAdmin(user);
+      setPermission(true);
+      console.log(user);
     }catch(e) {
-      setStatus(true);
-      setPermission('Acesso Negado!')
+      alert('Usuario não encontrado')
+      setPermission(false)
     }
   }
   
@@ -41,14 +70,11 @@ export const Login = () => {
             <C.TextButton>Login</C.TextButton>
           </C.Button>
         </C.ContainerForm>
-        {status  &&
-          <C.BoxPermissions>
-            <C.Permission>{permission}</C.Permission>
-          </C.BoxPermissions>
-        }
-        <C.ToRegister>
-          Faca seu cadastro!
-        </C.ToRegister>
+        <C.ButtonToRegister onPress={handleGoToRegister}>
+          <C.ToRegister>
+            Faca seu cadastro!
+          </C.ToRegister>
+        </C.ButtonToRegister>
       </C.Container>
   )
 }

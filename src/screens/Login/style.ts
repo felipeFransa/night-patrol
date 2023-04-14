@@ -62,6 +62,13 @@ export const TextButton = styled.Text`
   font-size: 30px;
   color: ${({theme})=> theme.COLORS.BACKGROUND};
 `
+export const ButtonToRegister = styled.TouchableOpacity`
+  width: 100px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 export const ToRegister = styled.Text`
   font-size: 12px;
   color: ${({ theme }) => theme.COLORS.TEXT_PRIMARY};

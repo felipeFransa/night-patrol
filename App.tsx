@@ -5,12 +5,14 @@ import { ThemeProvider } from 'styled-components/native';
 import { ThemeBTN, TextBTN } from './styleGlobal'
 
 import MainStack from './src/routes/stack.routes';
+import StackAuth from './src/routes/Auth.routes';
 
 import  light from './src/theme/light';
 import dark from './src/theme/dark';
 
 const app = () => {
-  const [theme, setTheme] = useState(light)
+  const [theme, setTheme] = useState(light);
+  const [auth, setAuth] = useState(false)
 
   const hanldeTheme = () => {
     const newTheme = theme === light ? dark : light;
@@ -20,7 +22,7 @@ const app = () => {
   return (
     <NavigationContainer>
       <ThemeProvider theme={theme}>
-        <MainStack />
+        {auth ? <MainStack/> : <StackAuth/>}
       </ThemeProvider>
     </NavigationContainer>
   );
