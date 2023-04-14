@@ -28,7 +28,7 @@ export const Home = () => {
   const handleFetchNotifications = async () => {
     try {
       const response = await getItem()
-      const data = response ? JSON.parse(response) : [];
+    const data = response ? JSON.parse(response) : [];
       setData(data);
       console.log(data)
     }catch(err){
@@ -58,12 +58,6 @@ export const Home = () => {
        <C.BoxButton>
         <C.Button onPress={handleStartPatrol}>
           <C.TextButton>Inicia!</C.TextButton>
-        </C.Button>
-        <C.Button>
-          <C.TextButton>Fecha!</C.TextButton>
-        </C.Button>
-        <C.Button>
-          <C.TextButton>Cobertura!</C.TextButton>
         </C.Button>
         <C.Button>
           <C.TextButton>Boas Vindas!</C.TextButton>
