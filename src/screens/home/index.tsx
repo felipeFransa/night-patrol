@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import React, { useState, useCallback } from "react";
+import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import { Users } from '../../../api';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import * as C from './style';
 
 const IMG = require('../../assets/ciclismo.png');
@@ -23,21 +23,22 @@ export const Home = () => {
   const [nameBD, setNameBD] = useState(`@${Users.firstName}-${Users.address}`);
 
   const navigation = useNavigation();
+  const { getItem } = useAsyncStorage(nameBD);
 
   const handleFetchNotifications = async () => {
     try {
-      const response = await AsyncStorage.getItem(nameBD)
-      const data = response ? JSON.parse(response) : {};
-      setData([data]);
-      console.log([data])
+      const response = await getItem()
+      const data = response ? JSON.parse(response) : [];
+      setData(data);
+      console.log(data)
     }catch(err){
       console.log(err);
     }
   }
-
-  useEffect(() => {
-    handleFetchNotifications()
-  }, [])
+  useFocusEffect(useCallback(()=>{
+   handleFetchNotifications()
+  }, []));
+  
 
   const handleStartPatrol = () => {
     navigation.navigate("StartPatrol")

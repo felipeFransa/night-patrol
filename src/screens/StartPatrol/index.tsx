@@ -1,13 +1,29 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState } from 'react';
 import { Users } from '../../../api';
 import uuid from 'react-native-uuid';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage, { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import * as c from './style';
 
+export type CardProps = {
+  _id: string;
+  title: string;
+  date: string;
+  hours: string;
+  newDate: Date
+}
+type Props = {
+  data: CardProps;
+  onPress: () => void;
+}
+
+
 export const StartPatrol = () => {
+  const [data, setData] = useState<CardProps[]>([]);
   const [nameBD, setNameBD] = useState(`@${Users.firstName}-${Users.address}`);
   const [start, setStart] = useState(false);
   const [called, setCalled] = useState(false);
+
+  const { getItem, setItem } = useAsyncStorage(nameBD);
 
   const HandleNewPatrol = async () => {
     try {
@@ -23,7 +39,13 @@ export const StartPatrol = () => {
       hours: Hours,
       newDate: new Date()
     }
-    await AsyncStorage.setItem(nameBD, JSON.stringify(newStartPatrol));
+    const response = await getItem();
+    const previonsData = response ? JSON.parse(response) : [];
+
+    const data = [...previonsData, newStartPatrol];
+
+    await setItem(JSON.stringify(data));
+    setData(data)
     console.log(newStartPatrol);
     alert('Ronda Iniciada com Sucesso!')
   } catch (err) {
@@ -31,10 +53,6 @@ export const StartPatrol = () => {
     alert('Erro ao inciar ronda, tenta novamente')
   }
   }
-
-  useEffect(()=>{
-   
-  },[])
 
   return (
     <c.Container>

@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import React, { useState, useCallback} from 'react';
+import { useFocusEffect } from '@react-navigation/native';
+import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import { Users } from '../../../api';
 import * as C from './style';
 
@@ -21,19 +22,21 @@ export const Toppings = () => {
   const [data, setData] = useState<CardProps[]>([]);
   const [nameBD, setNameBD] = useState(`@${Users.firstName}-${Users.address}`);
 
+  const { getItem } = useAsyncStorage(nameBD);
+
   const handleFetchNotifications = async () => {
     try {
-      const response = await AsyncStorage.getItem(nameBD)
-      const data = response ? JSON.parse(response) : {};
-      setData([data]);
-      console.log([data])
+      const response = await getItem()
+      const data = response ? JSON.parse(response) : [];
+      setData(data);
+      console.log(data)
     }catch(err){
       console.log(err);
     }
   }
-  useEffect(() => {
+  useFocusEffect(useCallback(()=>{
     handleFetchNotifications()
-  }, [])
+   }, []));
 
   return (
     <C.Container>
@@ -45,7 +48,6 @@ export const Toppings = () => {
         </C.NotificationTitle>
 
         <C.BoxNotificationArea>
-
             {data.map((item, index) =>(
               <C.NotificationBody key={index}>
                 <C.LogoBodyNTF>
