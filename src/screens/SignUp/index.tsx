@@ -11,7 +11,7 @@ export type UserAdminProps = {
   password: string;
   address: string;
   phoneNumber: string;
-  grupo?: string;
+  gruop?: string;
 }
 type Props = {
   data: UserAdminProps;
@@ -20,22 +20,44 @@ type Props = {
 
 export const SignUp = () => {
   const [nameBD, setNameBD] = useState(`@${Users.firstName}-${Users.address}`);
-  const [userAdmin, setUserAdmin] = useState<UserAdminProps>();
+  const [userAdmin, setUserAdmin] = useState<UserAdminProps[]>([]);
   const [permission, setPermission] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [address, setAddress] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [group, setGroup] = useState('');
 
   const navigation = useNavigation();
 
-  const { getItem } = useAsyncStorage(nameBD);
+  const { setItem, getItem } = useAsyncStorage(nameBD);
 
   const handleGoToLogin = () => {
     navigation.navigate("Login")
   }
-  const newUserSignup = () => {
+  const newUserSignup = async () => {
     try {
       const id = uuid.v4();
+      const newEmail = email;
+      const newPassword = password;
+      const newAddress = address;
+      const newPhoneNumber = phoneNumber;
+      const newGroup = group;
 
+      const newUser = {
+        id: id,
+        email: newEmail,
+        password: newPassword,
+        address: newAddress,
+        phoneNumber: newPhoneNumber,
+        group: newGroup
+      }
+      const response = await getItem()
+      const user = response ? JSON.parse(response) : [];
+
+      await setItem(JSON.stringify(user));
+      setUserAdmin(user);
+      console.log(user);
     }catch(error){
       console.log(error);
       alert('Não foi possível cadastro esse usuario')
@@ -61,7 +83,7 @@ export const SignUp = () => {
             <C.TextArea>Senha:</C.TextArea>
             <C.Input placeholder='Digite sua senha' />
           </C.InputArea>
-          <C.Button title="Cadastre-se"/>
+          <C.Button title="Cadastre-se" onPress={newUserSignup}/>
         </C.ContainerForm>
         <C.ButtonToLogin onPress={handleGoToLogin}>
           <C.ToLogin>

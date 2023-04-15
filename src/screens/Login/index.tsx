@@ -10,7 +10,7 @@ export type UserAdminProps = {
   password: string;
   address: string;
   phoneNumber: string;
-  grupo?: string;
+  group?: string;
 }
 type Props = {
   data: UserAdminProps;
