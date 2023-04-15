@@ -1,4 +1,5 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
+import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import { authService } from '../../api';
 import { Alert } from 'react-native';
 
@@ -11,6 +12,7 @@ interface AuthContextData {
   authData?: AuthData;
   login: (email: string, password: string) => Promise<AuthData>;
   signOut: () => Promise<void>;
+  loading: boolean;
 }
 export const AuthContext = createContext<AuthContextData>(
   {} as AuthContextData,
@@ -19,11 +21,26 @@ export const AuthContext = createContext<AuthContextData>(
 export const AuthProvider: React.FC<React.PropsWithChildren<{}>> = ({children}) => {
 
   const [authData, setAuthData] = useState<AuthData>();
+  const [loading, setLoading] = useState(true)
 
+  const { setItem, removeItem, getItem } = useAsyncStorage("@auth:user");
+
+  useEffect(()=>{
+    LoadingAuth()
+  },[])
+
+  const LoadingAuth = async () => {
+    const auth = await getItem()
+    if(auth){
+      setAuthData(JSON.parse(auth) as AuthData);
+    }
+    setLoading(false);
+  }
   const login = async (email: string, password: string):Promise<AuthData> => {
     try {
       const auth = await authService.login(email, password);
       setAuthData(auth)
+      await setItem(JSON.stringify(auth));
       return auth;
     }catch(error){
       Alert.alert('tente novamente')
@@ -32,11 +49,12 @@ export const AuthProvider: React.FC<React.PropsWithChildren<{}>> = ({children}) 
   }
   const signOut = async (): Promise<void> => {
     setAuthData(undefined)
+    await removeItem()
     return;
   }
 
   return (
-    <AuthContext.Provider value={{authData, login, signOut}}>
+    <AuthContext.Provider value={{authData, loading, login, signOut}}>
       {children && children}
     </AuthContext.Provider>
   )
