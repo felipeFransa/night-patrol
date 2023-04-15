@@ -1,4 +1,5 @@
 import axios from "axios";
+import { AuthData } from './src/context/Auth';
 
 const http = axios.create({
   baseURL: 'https://jsonplaceholder.typicode.com',
@@ -41,4 +42,25 @@ export const UserClients = [
   {name: 'Fulana 11', rua: 'Exemplo',  telefone: '31-97100-2255', casa: '320', bairro: 'caicara', IMGClient: imgUsers},
   {name: 'Fulana 12', rua: 'Exemplo',  telefone: '31-97100-2255', casa: '320', bairro: 'caicara', IMGClient: imgUsers},
   {name: 'Fulana 13', rua: 'Exemplo',  telefone: '31-97100-2255', casa: '320', bairro: 'caicara', IMGClient: imgUsers}
-]
+];
+
+const login = (email: string, password: string): Promise<AuthData> => {
+
+  return new Promise((resolve, reject)=>{
+
+    setTimeout(() => {
+      if(password === '12345'){
+        resolve({
+          token: 'fake-token',
+          email,
+          name: 'Felipe'
+        })
+      }else{
+        reject(new Error('credencias iválidas'))
+      }
+    }
+  , 5000);
+})
+}
+
+export const authService = {login}

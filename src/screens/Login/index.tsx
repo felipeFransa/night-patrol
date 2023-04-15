@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Users } from '../../../api';
+import { useAuth } from '../../context/Auth';
 import { useAsyncStorage } from "@react-native-async-storage/async-storage";
 import { useNavigation } from '@react-navigation/native';
 import * as C from './style';
@@ -18,6 +19,7 @@ type Props = {
 }
 
 export const Login = () => {
+  const {login} = useAuth();
   const [nameBD, setNameBD] = useState(`@${Users.firstName}:${Users.address}`);
 
   const [userAdmin, setUserAdmin] = useState<UserAdminProps>();
@@ -70,7 +72,7 @@ export const Login = () => {
             <C.TextArea>Senha:</C.TextArea>
             <C.Input placeholder='Digite sua senha' value={password} secureTextEntry={true} onChangeText={t=>setPassword(t)} />
           </C.InputArea>
-          <C.Button title="Login" onPress={handleVerify} />
+          <C.Button title="Login" onPress={()=>login(email, password)} />
         </C.ContainerForm>
         <C.ButtonToRegister onPress={handleGoToRegister}>
           <C.ToRegister>

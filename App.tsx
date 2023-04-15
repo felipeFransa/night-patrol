@@ -1,6 +1,7 @@
 import 'react-native-gesture-handler';
 import { useState } from 'react';
 import { ThemeProvider } from 'styled-components/native';
+import { AuthProvider } from './src/context/Auth';
 import { ThemeBTN, TextBTN } from './styleGlobal'
 
 import Router from './src/routes/Routes';
@@ -16,9 +17,11 @@ const app = () => {
     setTheme(newTheme);
   }
   return (
-      <ThemeProvider theme={theme}>
+     <AuthProvider>
+       <ThemeProvider theme={theme}>
         <Router/>
       </ThemeProvider>
+     </AuthProvider>
   );
 }
 export default app;

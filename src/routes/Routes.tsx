@@ -1,15 +1,16 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-
+import { useAuth } from '../context/Auth';
 import MainStack from './stack.routes';
 import StackAuth from './Auth.routes';
 
 const Router = () => {
   const [auth, setAuth] = useState(true);
+  const {authData} = useAuth()
 
   return (
     <NavigationContainer>
-      {auth ? <MainStack/> : <StackAuth/>}
+      {authData ? <MainStack/> : <StackAuth/>}
     </NavigationContainer>
   )
 };
