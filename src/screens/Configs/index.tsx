@@ -1,9 +1,11 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
+import { useAuth } from '../../context/Auth';
 import * as C from './style';
 
 export const Config = () => {
   const navigation = useNavigation();
+  const {signOut} = useAuth();
 
   const handlePerfil = () => {
     navigation.navigate("Admin")
@@ -69,7 +71,7 @@ export const Config = () => {
         </C.ConfigBox>
 
         <C.BoxLogout>
-          <C.BTNLogoutBox>
+          <C.BTNLogoutBox onPress={()=>signOut()}>
             <C.BTNLogoutIMG source={require('../../assets/sair.png')}/>
             <C.BTNLogoutText>Sair</C.BTNLogoutText>
           </C.BTNLogoutBox>

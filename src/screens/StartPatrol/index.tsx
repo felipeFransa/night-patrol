@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import MapView from 'react-native-maps';
 import { Users } from '../../../api';
 import uuid from 'react-native-uuid';
 import { StackActions, useNavigation } from '@react-navigation/native'
@@ -152,6 +153,7 @@ export const StartPatrol = () => {
 
   return (
     <C.Container>
+      <MapView />
       <C.BoxStartNotification>
       {!start && 
         <C.BTNSend onPress={HandleNewPatrol}>
