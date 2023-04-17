@@ -1,13 +1,20 @@
 import * as C from './style';
+import MapView from 'react-native-maps';
 
 export const Activities = () => {
 
   
   return (
     <C.Container>
-      <C.NotificationBox>
-        <C.Notification></C.Notification>
-      </C.NotificationBox>
+      <MapView
+        style={{ flex: 1 }}
+        initialRegion={{
+          latitude: 37.78825,
+          longitude: -122.4324,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
+        }}
+    />
 
     </C.Container>
   )
