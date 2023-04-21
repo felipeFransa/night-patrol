@@ -27,8 +27,8 @@ export default () => {
         case 'Notificações':
           imgSource = require('../assets/sino.png');
         break;
-        case 'Atividades':
-          imgSource = require('../assets/list.png');
+        case 'Map':
+          imgSource = require('../assets/map.png');
         break;
         case 'Configurações':
           imgSource = require('../assets/config.png');
@@ -40,7 +40,7 @@ export default () => {
   })}>
     <Tab.Screen name="Home" component={Home}/>
     <Tab.Screen name="Notificações" component={Toppings}/>
-    <Tab.Screen name="Atividades" component={Activities}/>
+    <Tab.Screen name="Map" component={Activities}/>
     <Tab.Screen name="Configurações" component={Config}/> 
   </Tab.Navigator>
  )
