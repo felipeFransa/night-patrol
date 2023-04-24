@@ -36,7 +36,7 @@ export const Activities = () => {
           longitude: location.coords.longitude,
         }}/>
       </MapView>}
-
+      
     </C.Container>
   )
 }
