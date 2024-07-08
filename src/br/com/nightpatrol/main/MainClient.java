@@ -7,13 +7,21 @@ import java.util.Scanner;
 public class MainClient {
     public static void main(String[] args) {
         Scanner reading = new Scanner(System.in);
-        System.out.println("Enter your name");
+
+        System.out.println("Enter your name:");
         String name = reading.nextLine();
+
+        System.out.println("Enter your city");
+        String city = reading.nextLine();
+
+        System.out.println("Enter your age:");
+        Integer age = reading.nextInt();
+
         Client client = new Client();
 
         client.setFirstName(name);
-        client.setAge(27);
-        client.setCity("Belo horizonte");
+        client.setAge(age);
+        client.setCity(city);
 
         System.out.println(client.getFirstName());
         System.out.println(client.getAge());
