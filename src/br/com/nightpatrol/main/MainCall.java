@@ -6,13 +6,14 @@ import java.util.Date;
 
 public class MainCall {
     public static void main(String[] args) {
-        System.out.println("olá seja bem vindo!");
+        System.out.println("Hello welcome!");
         Call call = new Call();
 
         call.setDate(new Date());
         call.setHours(new Date());
 
-        System.out.println("chamada realizadar");
+        System.out.println("Call success");
         System.out.println(call.getDate());
+        System.out.println(call.getHours());
     }
 }
