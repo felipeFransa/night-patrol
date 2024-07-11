@@ -22,8 +22,10 @@ public class MainClient {
         client.setFirstName(name);
         client.setAge(age);
         client.setCity(city);
-
-
+        client.setCep(32113460);
+        client.setRua("Carlos Pinheiro Chagas");
+        client.setNumberHouse(443);
+        client.setTypePlan(true);
 
         System.out.println(client.getFirstName());
         System.out.println(client.getAge());
