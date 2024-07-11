@@ -23,6 +23,8 @@ public class MainClient {
         client.setAge(age);
         client.setCity(city);
 
+
+
         System.out.println(client.getFirstName());
         System.out.println(client.getAge());
         System.out.println(client.getCity());
