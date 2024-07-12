@@ -1,10 +1,20 @@
 package br.com.nightpatrol.model;
 
 public class Manager {
+
     private String firstName;
+    private int numberPhone;
     private int age;
     private String city;
     private String region;
+
+    public int getNumberPhone() {
+        return numberPhone;
+    }
+
+    public void setNumberPhone(int numberPhone) {
+        this.numberPhone = numberPhone;
+    }
 
     public String getFirstName() {
         return firstName;

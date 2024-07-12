@@ -20,11 +20,13 @@ public class MainManager {
         Manager manager = new Manager();
 
         manager.setFirstName(userManagerName);
+        manager.setNumberPhone(971266370);
         manager.setAge(27);
         manager.setCity(userManagerCity);
         manager.setRegion(userManagerRegion);
 
         System.out.println(manager.getFirstName());
+        System.out.println("31"+ manager.getNumberPhone());
         System.out.println(manager.getAge());
         System.out.println(manager.getCity());
         System.out.println(manager.getRegion());
