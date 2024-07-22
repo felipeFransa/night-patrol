@@ -7,7 +7,12 @@ public class Main {
         Scanner reading = new Scanner(System.in);
         System.out.println("Hello welcome!");
         System.out.println("choose an option");
-        String option = reading.nextLine();
-        System.out.println(option.getClass());
+        Integer option = reading.nextInt();
+
+
+        while (option != 0){
+            System.out.println("Access negado!");
+            break;
+        }
     }
 }
