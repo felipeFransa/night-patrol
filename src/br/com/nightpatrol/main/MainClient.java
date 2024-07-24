@@ -27,8 +27,19 @@ public class MainClient {
         client.setNumberHouse(443);
         client.setTypePlan(true);
 
-        System.out.println(client.getFirstName());
-        System.out.println(client.getAge());
-        System.out.println(client.getCity());
+        boolean toCheck = true;
+        boolean userExist;
+
+        while (toCheck){
+            System.out.println("Entrou");
+            userExist = true;
+            if (userExist){
+                System.out.println(client.getFirstName());
+                System.out.println(client.getAge());
+                System.out.println(client.getCity());
+            }
+            break;
+        }
+        System.out.println("Saiu");
     }
 }
