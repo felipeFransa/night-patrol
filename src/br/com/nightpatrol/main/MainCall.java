@@ -17,6 +17,7 @@ public class MainCall {
         client.setRua("F. Ovinio");
         client.setNumberHouse(100);
         client.setTypePlan(true);
+        client.setCep(32113460);
 
         location.setLatitude("");
         location.setLongitude("");
@@ -24,11 +25,18 @@ public class MainCall {
         call.setDate(new Date());
         call.setHours(new Date());
 
+        boolean toCheck = client.isTypePlan();
 
-        while (true){
+        while (toCheck == true ){
             System.out.println("Call success");
             System.out.println(call.getDate());
+            System.out.println(client.getFirstName());
+            System.out.println(client.getCity());
+            System.out.println(client.getCep());
+            System.out.println(client.getNumberHouse());
             break;
         }
+
+        System.out.println("Chamada encerrada!");
     }
 }
