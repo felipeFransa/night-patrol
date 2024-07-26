@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class MainClient {
     public static void main(String[] args) {
         Scanner reading = new Scanner(System.in);
+        Client client = new Client();
 
         System.out.println("Enter your name:");
         String name = reading.nextLine();
@@ -14,17 +15,20 @@ public class MainClient {
         System.out.println("Enter your city");
         String city = reading.nextLine();
 
-        System.out.println("Enter your age:");
-        Integer age = reading.nextInt();
+        System.out.println("Enter your rua");
+        String rua = reading.nextLine();
 
-        Client client = new Client();
+        System.out.println("Enter your cep:");
+        Integer cep = reading.nextInt();
+
+        System.out.println("Enter your number house");
+        Integer numberHouse = reading.nextInt();
 
         client.setFirstName(name);
-        client.setAge(age);
         client.setCity(city);
-        client.setCep(32113460);
-        client.setRua("Carlos Pinheiro Chagas");
-        client.setNumberHouse(443);
+        client.setCep(cep);
+        client.setRua(rua);
+        client.setNumberHouse(numberHouse);
         client.setTypePlan(true);
 
         boolean toCheck = true;
@@ -35,7 +39,7 @@ public class MainClient {
             userExist = true;
             if (userExist){
                 System.out.println(client.getFirstName());
-                System.out.println(client.getAge());
+                System.out.println(client.getRua());
                 System.out.println(client.getCity());
             }
             break;
