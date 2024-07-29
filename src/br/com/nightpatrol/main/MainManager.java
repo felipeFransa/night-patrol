@@ -25,10 +25,12 @@ public class MainManager {
         manager.setCity(userManagerCity);
         manager.setRegion(userManagerRegion);
 
-        System.out.println(manager.getFirstName());
-        System.out.println("31"+ manager.getNumberPhone());
-        System.out.println(manager.getAge());
-        System.out.println(manager.getCity());
-        System.out.println(manager.getRegion());
+        while (true){
+            System.out.println(manager.getFirstName());
+            System.out.println("31"+ manager.getNumberPhone());
+            System.out.println(manager.getAge());
+            System.out.println(manager.getCity());
+            System.out.println(manager.getRegion());
+        }
     }
 }
