@@ -10,26 +10,31 @@ public class Main {
         Scanner reading = new Scanner(System.in);
         Manager manager = new Manager();
 
-        manager.setFirstName("Felipe");
-        manager.setAge(27);
+        String name = reading.nextLine();
 
-        System.out.println("Hello welcome your bank");
-        System.out.println("enter your account");
-        String yourPassword = reading.nextLine();
+        if (name.equals("manager")){
 
-        String password = "a8f3s3f3";
+            manager.setFirstName("Felipe");
+            manager.setAge(27);
 
-        while (yourPassword.equals(password)){
+            System.out.println("Hello welcome your bank");
+            System.out.println("enter your account");
+            String yourPassword = reading.nextLine();
 
-            System.out.println("enter your option");
-            Integer option = reading.nextInt();
+            String password = "a8f3s3f3";
 
-            if (option  == 1 ){
-                System.out.println("Seja bem vindo " +manager.getFirstName());
-            } else {
-                System.out.println("acesso negado");
+            while (yourPassword.equals(password)){
+
+                System.out.println("enter your option");
+                Integer option = reading.nextInt();
+
+                if (option  == 1 ){
+                    System.out.println("Seja bem vindo " +manager.getFirstName());
+                } else {
+                    System.out.println("acesso negado");
+                }
+                break;
             }
-            break;
         }
     }
 }
