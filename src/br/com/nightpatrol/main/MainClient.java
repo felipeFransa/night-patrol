@@ -31,19 +31,14 @@ public class MainClient {
         client.setNumberHouse(numberHouse);
         client.setTypePlan(true);
 
-        boolean toCheck = true;
-        boolean userExist;
+        var toCheck = client.isTypePlan();
 
-        while (toCheck){
-            System.out.println("Entrou");
-            userExist = true;
-            if (userExist){
-                System.out.println(client.getFirstName());
-                System.out.println(client.getRua());
-                System.out.println(client.getCity());
-            }
-            break;
+        if (toCheck){
+            System.out.println(client.getFirstName());
+            System.out.println(client.getRua());
+            System.out.println(client.getCity());
+        }else {
+            System.out.println("failed");
         }
-        System.out.println("Saiu");
     }
 }

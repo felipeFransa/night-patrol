@@ -7,6 +7,17 @@ public class Manager {
     private int age;
     private String city;
     private String region;
+    private boolean state;
+
+    public boolean isState() {
+        return state;
+    }
+
+    public void setState(boolean state) {
+        this.state = state;
+    }
+
+
 
     public int getNumberPhone() {
         return numberPhone;

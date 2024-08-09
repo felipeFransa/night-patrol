@@ -7,15 +7,15 @@ import java.util.Scanner;
 public class MainManager {
     public static void main(String[] args) {
 
-        Scanner readind = new Scanner(System.in);
+        Scanner reading = new Scanner(System.in);
         System.out.println("Enter your name");
-        String userManagerName = readind.nextLine();
+        String userManagerName = reading.nextLine();
 
         System.out.println("enter your city");
-        String userManagerCity = readind.nextLine();
+        String userManagerCity = reading.nextLine();
 
         System.out.println("enter your region");
-        String userManagerRegion = readind.nextLine();
+        String userManagerRegion = reading.nextLine();
 
         Manager manager = new Manager();
 
@@ -24,13 +24,18 @@ public class MainManager {
         manager.setAge(27);
         manager.setCity(userManagerCity);
         manager.setRegion(userManagerRegion);
+        manager.setState(true);
 
-        while (true){
+        var stateValid = manager.isState();
+
+        if (stateValid){
             System.out.println(manager.getFirstName());
             System.out.println("31"+ manager.getNumberPhone());
             System.out.println(manager.getAge());
             System.out.println(manager.getCity());
             System.out.println(manager.getRegion());
+        }else {
+            System.out.println("no valid!");
         }
     }
 }

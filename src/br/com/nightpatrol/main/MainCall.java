@@ -41,16 +41,15 @@ public class MainCall {
 
         boolean toCheck = client.isTypePlan();
 
-        while (toCheck == true ){
+        if (toCheck){
             System.out.println("Call success");
             System.out.println(call.getDate());
             System.out.println(client.getFirstName());
             System.out.println(client.getCity());
             System.out.println(client.getCep());
             System.out.println(client.getNumberHouse());
-            break;
+        }else {
+            System.out.println("call failed!");
         }
-
-        System.out.println("Chamada encerrada!");
     }
 }
