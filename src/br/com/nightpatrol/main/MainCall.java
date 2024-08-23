@@ -33,8 +33,8 @@ public class MainCall {
         client.setTypePlan(true);
         client.setCep(cep);
 
-        location.setLatitude("");
-        location.setLongitude("");
+        location.setLatitude("-28.098883");
+        location.setLongitude("-048.675000");
 
         call.setDate(new Date());
         call.setHours(new Date());
