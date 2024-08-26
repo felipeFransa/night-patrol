@@ -7,7 +7,12 @@ public class MainNotice {
         System.out.println("main notice");
         Notice notice = new Notice();
 
-        notice.setNoticeTitle("");
-        notice.setNoticeDescription("");
+        notice.setNoticeTitle("new notice");
+        notice.setNoticeDescription("today's news");
+
+        String title = notice.getNoticeTitle();
+        String description  = notice.getNoticeDescription();
+
+        System.out.println(title+ " or " +description);
     }
 }
