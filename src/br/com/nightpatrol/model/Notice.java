@@ -1,5 +1,6 @@
 package br.com.nightpatrol.model;
 
+
 public class Notice {
     private String noticeTitle;
     private String noticeDescription;

@@ -2,9 +2,12 @@ package br.com.nightpatrol.main;
 
 import br.com.nightpatrol.model.Notice;
 
+import java.time.LocalDate;
+
 public class MainNotice {
     public static void main(String[] args) {
         System.out.println("main notice");
+        LocalDate myObj = LocalDate.now();
         Notice notice = new Notice();
 
         notice.setNoticeTitle("new notice");
@@ -14,5 +17,6 @@ public class MainNotice {
         String description  = notice.getNoticeDescription();
 
         System.out.println(title+ " or " +description);
+        System.out.println(myObj);
     }
 }
