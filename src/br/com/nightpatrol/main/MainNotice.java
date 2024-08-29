@@ -11,7 +11,6 @@ public class MainNotice {
         LocalDate myObj = LocalDate.now();
         Notice notice = new Notice();
 
-
         notice.setNoticeTitle("new notice");
         notice.setNoticeDescription("today's news");
 
