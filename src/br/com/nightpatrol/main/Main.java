@@ -2,6 +2,7 @@ package br.com.nightpatrol.main;
 
 import br.com.nightpatrol.model.Manager;
 
+import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
@@ -10,6 +11,7 @@ public class Main {
         Scanner reading = new Scanner(System.in);
         Manager manager = new Manager();
 
+        System.out.println("enter user type client:");
         String name = reading.nextLine();
 
         if (name.equals("manager")){
@@ -30,6 +32,7 @@ public class Main {
 
                 if (option  == 1 ){
                     System.out.println("Seja bem vindo " +manager.getFirstName());
+                    System.out.println(new Date());
                 } else {
                     System.out.println("acesso negado");
                 }

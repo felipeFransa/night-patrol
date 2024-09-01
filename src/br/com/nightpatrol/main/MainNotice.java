@@ -16,7 +16,6 @@ public class MainNotice {
         System.out.println("enter new description notice");
         String descriptionNotice = reading.nextLine();
 
-        LocalDate myObj = LocalDate.now();
         Notice notice = new Notice();
 
         notice.setNoticeTitle(titleNotice);
@@ -26,7 +25,6 @@ public class MainNotice {
         String description  = notice.getNoticeDescription();
 
         System.out.println(title+ " or " +description);
-        System.out.println(myObj);
         System.out.println(new Date());
     }
 }
