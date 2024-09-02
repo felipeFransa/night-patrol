@@ -9,6 +9,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner reading = new Scanner(System.in);
+        Scanner readingNumber = new Scanner(System.in);
         Manager manager = new Manager();
 
         System.out.println("enter user type client:");
@@ -28,13 +29,13 @@ public class Main {
             while (yourPassword.equals(password)){
 
                 System.out.println("enter your option");
-                Integer option = reading.nextInt();
+                Integer option = readingNumber.nextInt();
 
                 if (option  == 1 ){
-                    System.out.println("Seja bem vindo " +manager.getFirstName());
+                    System.out.println("welcome " +manager.getFirstName());
                     System.out.println(new Date());
                 } else {
-                    System.out.println("acesso negado");
+                    System.out.println("Access denied");
                 }
                 break;
             }
