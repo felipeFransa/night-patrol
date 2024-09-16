@@ -48,6 +48,7 @@ public class MainCall {
             System.out.println(client.getCity());
             System.out.println(client.getCep());
             System.out.println(client.getNumberHouse());
+            System.out.println(location.getLatitude()+ " & " + location.getLongitude());
         }else {
             System.out.println("call failed!");
         }
