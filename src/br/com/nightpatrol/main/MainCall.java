@@ -38,11 +38,13 @@ public class MainCall {
 
         call.setDate(new Date());
         call.setHours(new Date());
+        call.setCallType("saida");
 
         boolean toCheck = client.isTypePlan();
 
         if (toCheck){
             System.out.println("Call success");
+            System.out.println(call.getCallType());
             System.out.println(call.getDate());
             System.out.println(client.getFirstName());
             System.out.println(client.getCity());
