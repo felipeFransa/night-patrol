@@ -17,8 +17,6 @@ public class Manager {
         this.state = state;
     }
 
-
-
     public int getNumberPhone() {
         return numberPhone;
     }
