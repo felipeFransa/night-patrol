@@ -2,6 +2,7 @@ package br.com.nightpatrol.main;
 
 import br.com.nightpatrol.model.Manager;
 
+import java.time.LocalTime;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -11,6 +12,7 @@ public class Main {
         Scanner reading = new Scanner(System.in);
         Scanner readingNumber = new Scanner(System.in);
         Manager manager = new Manager();
+        LocalTime myTime = LocalTime.now();
 
         System.out.println("enter user type client:");
         String name = reading.nextLine();
