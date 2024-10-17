@@ -2,6 +2,7 @@ package br.com.nightpatrol.main;
 
 import br.com.nightpatrol.model.Manager;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Date;
 import java.util.Scanner;
@@ -13,6 +14,7 @@ public class Main {
         Scanner readingNumber = new Scanner(System.in);
         Manager manager = new Manager();
         LocalTime myTime = LocalTime.now();
+        LocalDate myObj = LocalDate.now();
 
         System.out.println("enter user type client:");
         String name = reading.nextLine();
@@ -35,7 +37,8 @@ public class Main {
 
                 if (option  == 1 ){
                     System.out.println("welcome " +manager.getFirstName());
-                    System.out.println(new Date());
+                    System.out.println(myTime);
+                    System.out.println(myObj);
                 } else {
                     System.out.println("Access denied");
                 }
