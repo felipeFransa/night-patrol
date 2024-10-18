@@ -4,6 +4,8 @@ import br.com.nightpatrol.model.Call;
 import br.com.nightpatrol.model.Client;
 import br.com.nightpatrol.model.Location;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -14,6 +16,8 @@ public class MainCall {
         Call call = new Call();
         Location location = new Location();
         Client client = new Client();
+        LocalDate myDate = LocalDate.now();
+        LocalTime myTime = LocalTime.now();
 
         System.out.println("enter your name:");
         String firstName = reading.nextLine();

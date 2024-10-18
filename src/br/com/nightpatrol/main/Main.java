@@ -4,7 +4,6 @@ import br.com.nightpatrol.model.Manager;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
