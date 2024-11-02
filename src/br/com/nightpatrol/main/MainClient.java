@@ -2,13 +2,16 @@ package br.com.nightpatrol.main;
 
 import br.com.nightpatrol.model.Client;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class MainClient {
     public static void main(String[] args) {
         Scanner reading = new Scanner(System.in);
         Client client = new Client();
+        LocalDate myDate = LocalDate.now();
 
+        System.out.println(myDate);
         System.out.println("Enter your name:");
         String name = reading.nextLine();
 
