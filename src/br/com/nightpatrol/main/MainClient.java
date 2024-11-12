@@ -3,6 +3,7 @@ package br.com.nightpatrol.main;
 import br.com.nightpatrol.model.Client;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Scanner;
 
 public class MainClient {
@@ -10,8 +11,8 @@ public class MainClient {
         Scanner reading = new Scanner(System.in);
         Client client = new Client();
         LocalDate myDate = LocalDate.now();
+        LocalTime nowTime = LocalTime.now();
 
-        System.out.println(myDate);
         System.out.println("Enter your name:");
         String name = reading.nextLine();
 
@@ -40,6 +41,8 @@ public class MainClient {
             System.out.println(client.getFirstName());
             System.out.println(client.getRua());
             System.out.println(client.getCity());
+            System.out.println(myDate);
+            System.out.println(nowTime);
         }else {
             System.out.println("failed");
         }

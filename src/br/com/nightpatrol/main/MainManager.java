@@ -2,11 +2,14 @@ package br.com.nightpatrol.main;
 
 import br.com.nightpatrol.model.Manager;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Scanner;
 
 public class MainManager {
     public static void main(String[] args) {
-
+        LocalDate nowDate = LocalDate.now();
+        LocalTime nowTime = LocalTime.now();
         Scanner reading = new Scanner(System.in);
         System.out.println("Enter your name");
         String userManagerName = reading.nextLine();
@@ -34,6 +37,8 @@ public class MainManager {
             System.out.println(manager.getAge());
             System.out.println(manager.getCity());
             System.out.println(manager.getRegion());
+            System.out.println(nowDate);
+            System.out.println(nowTime);
         }else {
             System.out.println("no valid!");
         }
